@@ -11,7 +11,7 @@ Constructor :
     a. Default constructor (runs by the system internally)
     b. No-argument constructor (explicitly defined by the programmer)
     c. Parameterized constructor 
-    d. Copy constructor (We can perform the concept of copying data into another object through Parameterized constructor)
+    d. Copy constructor (We can perform the concept of copying data into another object through Parameterized constructor | or explicitly)
        Here we have two concepts while copying data into another object : 
        i. shallow copy
        ii. deep copy 
