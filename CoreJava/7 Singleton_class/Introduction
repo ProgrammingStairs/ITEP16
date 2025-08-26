@@ -1,0 +1,16 @@
+Singleton class
+----------------
+Singleton class is a class which can have only one object at a time, and after that if we try to create another object then in that case the new reference variable also points to the previously created object. 
+
+Rules to define a singleton class : 
+
+1. Make constructor private, so that we cannot create object of that specific class from outside(i.e from another class)
+
+2. Make static method which returns object of singleton class , and whose return type is of that specific singleton class type.
+
+Here Operation is performed by : 
+    a. Eager Initialization
+       Whether we needs object or not, Eager initialization will creates object when class loads.
+
+    b. Lazy Initialization
+       Lazy Initialization will not creates object when class loads, it will creates object when user needs or request to create.  
