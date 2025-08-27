@@ -1,0 +1,268 @@
+
+
+|-- Procedure oriented programming Language
+    It is a way of writing a list of instructions for the computer to follow and this instructions are arranged in a group and this groups are known as functions.
+
+    Characteristics : 
+        1. Mainly emphasis is on doing things.
+        2. Large programs are divided into what are known as functions 
+        3. Data revolves around the system 
+        4. Function shares global data 
+        5. Functions can transform data 
+        6. Follows top down approach in program design 
+
+|-- Object oriented programming Language
+    It is a way of modularizing a program which allocates partitioned memory area for both data and functions and using them as a templates and call the copies of such modules on demand. 
+
+    Characteristics : 
+        1. Mainly emphasis is on data rather than procedure 
+        2. Large programs are divided into what are known as objects
+        3. Data is hidden and cannot be accessible from outside world 
+        4. New Data can be added easily when ever required 
+        5. Follows bottom up approach
+
+    OOP'S concept
+        1. Object 
+        2. Class 
+        3. Inheritance
+        4. Polymorphism 
+        5. Encapsulation
+        6. Abstraction
+
+    Object oriented programming language
+        Which follows all oops concept
+        ex : c++,java etc 
+
+    Object based programming language    
+        Which follows all oops concept except inheritance and run time polymorphism
+        ex : ADA
+
+    Fully object oriented programming language 
+        Follows all oops concept  ex : java, c++ etc
+
+    Purely object oriented programming language
+        ex : smalltalk etc
+
+    1. Object : 
+        a. object is a real world entity, which have some physical existence.
+        b. every object belongs to some specific class 
+        c. objects may communicate with each other through functions 
+        d. object is an instance of a class
+        e. Object may have state, identity and behaviour.
+
+    2. Class : 
+        a. Class is a userdefined blueprint for creating object
+        b. class is a logical entity
+        c. class provides specifications 
+        d. class contains data members and member functions
+        e. class is a collection of similar type of objects
+
+    3. Inheritance : Inheritance is the process in which object of one class may inherit the properties of object of another class. 
+
+    Here parent class is also known as super class or base class whereas child class is also known as sub class or derived class. 
+
+    Types of inheritance : 
+        a. Single Inheritance 
+        b. Multi level Inheritance 
+        c. Hierarchical Inheritance
+
+    4. Encapsulation : 
+        Wrapping up of data members and member functions into single unit that is in object, is known as Encapsulation. 
+        For achieving encapsulation in more efficient manner, we needs to make data member private and member function public. 
+
+    5. Polymorphism : 
+        Polymorphism is derived from a greek term, where poly means many and morphism means forms, which means more than one form. 
+        Polymorphism can be caterorized as :
+            a. compile time polymorphism or static binding or early binding
+                here we use Method Overloading to represents the concept of compile time polymorphism.
+
+                Method Overloading : 
+                    i. Same name method 
+                    ii. With different no. of arguments or with same no. of arguments but with different datatypes 
+                    iii. lies in same class 
+                    iv. No inherit mechanism is present
+
+            b. run time polymorphism or dynamic binding or late binding
+                here we use Method Overriding first then upcasting concept to achieve the functionality of run time polymorphism 
+
+|-- Functional programming Language
+    In this case, we are going to complete incomplete method with the help of expressions.
+
+Java Programming Language
+-------------------------
+User A <---------------------> User B
+             Language
+        (Hindi, English, Marathi etc)
+
+User A <---------------------> Machine
+          Programming Language
+        (Java, Python, C/C++ etc)
+
+Language : Acts as a medium of communication
+
+Programming Lnaguage : It is a set of instructions, commands and other syntaxes used to create a software.
+                                                      5 - 2 = 3
+Java Programming Language : It is a general purpose, imperative, case sensitive, object oriented, class based, strictly typed and highly syntax based programming language.
+
+Along with this it is also a computing platform, here computing platform means collection of programs which allows java to create and run java applications. 
+
+Types of application :
+1. Window based Application | Standalone application | Desktop application
+Tech. used : awt(abstract windowing toolkit) and swing
+ex: antivirus, music player etc
+
+2. Web Application : Application which runds on the browser and whose execution takes place on the server. It basically works on client server architecture. 
+
+        |-------------------------------->
+      client <---------HTTP--------> Server
+       <---------------------------------|  
+Servlet, Jsp, and frameworks
+
+3. Enterprise application : Applications which are distributed in nature
+EJB (Enterprise java beans)
+
+4. Mobile Application : J2ME | Android 
+
+5. Games
+6. Embedded systems 
+7. Big Data and Hadoop
+8. Robotics 
+
+-------------------------------------------------------------------------------
+
+#include<stdio.h>
+int main(){
+    printf("Hello world");
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+int main(){
+    cout<<"Hello world";
+    return 0;
+}
+
+Structure of java program
+-------------------------
+
+class Hello{
+    public static void main(String args[]){
+        System.out.println("Hello world");
+    }
+}
+
+class : class is a keyword
+class is a userdefined blueprint for creating object.
+
+<class_name> : Hello(Pascal) | hello | HELLO
+
+cases : 
+    camel case : addProduct <----------- function
+    pascal case : Hello  <-------------- class
+    snake case : add_product
+    habib case : add-product
+
+Filename : Hello.java | Demo.java
+class Hello{
+    .....
+}
+|-- here file name and class name can be same or different
+
+Filename : Hello.java
+public class Hello{
+    .....
+}
+|-- here file name and class name must be same
+
+{ opening of class definition part
+ 
+public static void main(String args[])
+|-- public 
+    |-- keyword
+    |-- access modifier (public, private, protected, default(package private))
+    |-- jvm can call it from anywhere
+
+static
+    |-- keyword
+    |-- modifier (abstract, synchronized, static, final etc)
+    |-- If we make any method as a static, then in that case we do not need to create object of that class to call that static method, static method is directly called by class name.
+
+void
+    |-- return type
+    |-- Here it does not return anything
+
+main
+    |-- predefined word
+
+(String args[]) 
+    |-- command line argument
+    |-- String  = class
+    |-- args[] String array
+
+    javac Demo.java
+
+    java Demo Hello 23 56.67
+
+(String []args)
+(String[] args) 
+(String...args) here 3 dots represents varargs = variable arguments 
+
+String name,args[]
+variable: name
+array : args
+
+String name,[]args
+variable: name
+array : args
+
+String[] name,args
+array : name,args
+
+{ opening of main function definition part 
+
+System.out.println("Hello world");
+
+System = class -------> predefined class
+. = dot operator -----> Misc operator 
+out = object ---------> PrintStream class
+println = method -----> PrintStream class 
+
+class System {
+    static PrintStream out;
+}
+
+here out is the static member of System class 
+and object of PrintStream class 
+
+class PrintStream{
+    public void println(String s){
+        .....
+    }
+    public void print(String s){
+        .....
+    }
+    public void println(int i){
+        .....
+    }
+    public void println(double d){
+        .....
+    }
+     |    |
+}
+
+} = closing of main function definition part
+} = closing of class definition part
+
+How to create and run java program : 
+------------------------------------
+1. Word processing tool | Editor | IDE 
+2. Write Program 
+3. You need to compile
+   |-- download jdk
+   
+   https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html
+
+   |-- compiler ---> javac ---> jdk
+4. output : vs code---> terminal
+                   |--> command prompt
