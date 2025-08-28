@@ -1,2 +1,10 @@
-Super Keyword : 
+this keyword : current class
+Super Keyword : parent class
+
+Super keyword : 
 ---------------
+    a. variable : In case of variable, super is used to access parent class variable.
+
+    b. method : In case of method, super is used to access parent class method.
+
+    c. constructor : In case of constructor, super is used to access parent class constructor.
