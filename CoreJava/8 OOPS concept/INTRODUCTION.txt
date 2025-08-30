@@ -73,6 +73,7 @@
     5. Polymorphism : 
         Polymorphism is derived from a greek term, where poly means many and morphism means forms, which means more than one form. 
         Polymorphism can be caterorized as :
+
             a. compile time polymorphism or static binding or early binding
                 here we use Method Overloading to represents the concept of compile time polymorphism.
 
@@ -84,6 +85,16 @@
 
             b. run time polymorphism or dynamic binding or late binding
                 here we use Method Overriding first then upcasting concept to achieve the functionality of run time polymorphism 
+
+                Method Overriding : 
+                    i. Same name method 
+                    ii. With same no. of arguments and Types  
+                    iii. lies in different classes 
+                    iv. Inherit mechanism is present
+
+
+
+
 
 |-- Functional programming Language
     In this case, we are going to complete incomplete method with the help of expressions.
