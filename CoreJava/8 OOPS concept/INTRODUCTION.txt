@@ -92,6 +92,17 @@
                     iii. lies in different classes 
                     iv. Inherit mechanism is present
 
+    6. Abstraction : 
+    Abstraction is the process of hiding implementation details and showing only functionality to the user. We can achieve the functionality of abstraction by two ways : 
+        a. By Abstract class (0 to 100%) 
+        b. By Interface (100% till jdk 7)
+
+
+
+
+
+
+
 
 
 
