@@ -1,0 +1,18 @@
+Interface
+----------
+1. Interface is also used to achieve abstraction
+2. With the help of interface we can achieve 100% abstraction till jdk7
+3. Interface is used to achieve loose coupling 
+4. Interface is used to achieve the functionality of multiple inheritance 
+5. We can use implements keyword to implement interface 
+6. Interface is represented by interface keyword followed by interface name 
+7. Class implements interface, whereas interface extends interface 
+8. By default data members inside interface is public static final and member methods are public abstract
+9. From jdk8, we can create concrete methods(methods with definition part) inside interface with the help of default and static keyword 
+10.  From jdk9, we can create private method inside interface 
+11. With the help of interface, abstract class and normal class, we can create anonymous class but priority goes with interface to create anonymous class 
+12. syntax : 
+        interface Showable{
+            int age=19; // by default public static final 
+            void show(); // by default public abstract
+        }
