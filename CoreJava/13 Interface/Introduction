@@ -6,7 +6,7 @@ Interface
 4. Interface is used to achieve the functionality of multiple inheritance 
 5. We can use implements keyword to implement interface 
 6. Interface is represented by interface keyword followed by interface name 
-7. Class implements interface, whereas interface extends interface 
+7. Class implements interface, whereas interface extends interfsace 
 8. By default data members inside interface is public static final and member methods are public abstract
 9. From jdk8, we can create concrete methods(methods with definition part) inside interface with the help of default and static keyword 
 10.  From jdk9, we can create private method inside interface 
@@ -16,3 +16,13 @@ Interface
             int age=19; // by default public static final 
             void show(); // by default public abstract
         }
+13. We can also create functional interface by putting @FunctionalInterface annotation
+Functional interface means, the interface which contains only one abstract method.
+
+14. Functional Interface is required when we deal with lambda expression.
+
+            interface VideoCalling    interface Chatting 
+                      |________________________| |
+                      |                          |
+                Web Application                  |
+                                         Another Application 
