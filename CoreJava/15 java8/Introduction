@@ -1,0 +1,13 @@
+Procedure oriented programming language
+Object oriented programming language
+
+Functional programming language(Expression based) : 
+It is a paradigm(pattern) which allows programming using expression. 
+It mainly focuses on what needs to be done rather than how it can be done. Here we can use : 
+    a. Functional Interface 
+    b. Lambda expression
+    c. Method reference 
+    d. Predicate 
+
+Note: all these are the concepts of jdk8
+
