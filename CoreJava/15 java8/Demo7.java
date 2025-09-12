@@ -13,9 +13,20 @@ class Demo7{
             int b = sc.nextInt();
             
         Showable obj;
-        obj = (a1,b1)->{
-            a1+b1;
-        };
-        System.out.println("Result : "+obj.calculate(a,b));
+        obj = (a1,b1)->(a1+b1);
+        System.out.println("Add : "+obj.calculate(a,b));
+
+        obj = (a1,b1)->(a1-b1);
+        System.out.println("Sub : "+obj.calculate(a,b));
+
+        obj = (a1,b1)->(a1*b1);
+        System.out.println("Mul : "+obj.calculate(a,b));
+
+        obj = (a1,b1)->(a1/b1);
+        System.out.println("Div : "+obj.calculate(a,b));
+
+        obj = (a1,b1)->(a1%b1);
+        System.out.println("Mod : "+obj.calculate(a,b));
+
     }
 }
