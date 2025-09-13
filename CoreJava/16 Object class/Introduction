@@ -1,0 +1,35 @@
+Object Class
+-------------
+Object class is the parent class of every class in java, every class whether directly or indirectly may extends that specific Object class .
+
+Object class lies in lang package(java.lang.Obbject).
+Note : lang package is the default package in java(Some classes which falls inside lang package is System class, String class etc)
+
+Object class have some methods : 
+    1. toString()   : Default string representation of object 
+        public String toString(){
+            return getClass().getName()+"@"+Integer.toHexString(hashCode());
+        }
+        o/p: Demo1@23a2b3e
+
+        @Override
+        public String toString(){
+            return "{ "+rno+" "+per+" "+name+" }"; 
+        }
+        
+    2. equals()
+    3. hashCode()
+    4. getClass() 
+    5. finalize() 
+    6. clone()
+    7. wait()
+        |-- wait(argument 1)
+        |-- wait(argument 1, argument 2)
+    8. notify()
+    9. notifyAll()
+
+1. toString()
+
+Demo1 s1 = new Demo1();
+System.out.println(s1); // s1.toString();
+System.out.println(s1.toString()); 
