@@ -1,0 +1,48 @@
+Exception Handling : 
+-------------------
+Exceptions are the run time anomalies(unexpected situation), which may arise during the execution of program, and the mechanism of handling such type of execptions are known as Exception handling mechanism. 
+
+Exception Handling mechanism includes : 
+1. Find the problem(Hit the exception)
+2. Inform that error has occured(Throw the exception)
+3. Receive the error information(Catch the exception)
+4. Take corrective measure(Handle the exception)
+
+There are 5 keywords used in exception handling : 
+    a. try      b. catch     c. throw    d. throws     e. finally
+
+out of this, try catch and finally are blocks whereas throw and throws are keywords.
+
+Syntax: 
+    try{
+        ....
+    }catch(Exception e){
+        ....
+    }
+
+    try with multiple catch : 
+        try{
+            ....
+        }catch(Exception_1 e){
+            .....
+        }catch(Exception_2 e){
+            .....
+        }catch(Exception_3 e){
+            .....
+        }
+
+    try with generalized catch : 
+        try{
+            ....
+        }catch(Exception_1 | Exception_2 | Exception_3 ex){
+            .....
+        }
+
+    jdk8 : 
+    try with resource 
+
+    try(class_name obj = new class_name()){
+
+    }catch(Exception e){
+
+    }
