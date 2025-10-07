@@ -1,0 +1,18 @@
+POJO vs Bean
+------------
+
+POJO = Plain old java object
+1. It doesnot follows any special restrictions other than those provided by java language specification (JLS).
+2. Data members can be public private protected and default(package private)
+3. Members methods can be public private protected and default(package private)
+4. Classes can implements Serializable interface 
+5. Can contains default or parameterized  constructor
+
+Bean class
+1. It follows special restrictions other than those provided by java language specification (JLS).
+2. Data members must be private
+3. Members methods must be public
+4. Classes must implements Serializable interface 
+5. Must contains default constructor
+
+
