@@ -2,7 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 public class ArrayList3 {
     public static void main(String[] args) {
-           ArrayList<Integer> list = new ArrayList<>();
+//        ArrayList<Integer> list = new ArrayList<>(); // by default capacity 10
+              
+//        ArrayList<Integer> list = new ArrayList<>(3); // here we set capacity to 3
+
+ArrayList<Integer> list = new ArrayList<>();        
+    list.ensureCapacity(500);   // here we set capacity to 500
+           
            System.out.println("size : "+list.size());
            System.out.println("isEmpty : "+list.isEmpty());
            
