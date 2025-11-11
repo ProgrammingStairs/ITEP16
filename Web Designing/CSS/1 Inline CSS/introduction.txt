@@ -21,7 +21,7 @@ Out of this three CSS, Priority goes to inline CSS, but the recommended approach
 8. We have several color codes in CSS to put colors on our web page.
 9. We have several ways to implement units in CSS.
 10. We have the concept of BOX MODEL in css (Which includes margin, border and padding)
-11. We have flexbox abd grid system functionality in CSS
+11. We have flexbox and grid system functionality in CSS
 12. CSS comes to overcome the limitations of HTML
 13. CSS is dependent on HTML 
 
@@ -72,10 +72,6 @@ How to deal with Internal CSS :
                     d. General sibling selector 
                     e. Direct child selector 
         On the basis of these selectors, we are going to implement properties corresponding to its value to elements .                
-            property : value;
-            property : value;
-             |            |
-            property : value; 
         </style>
     </head>
     <body>
@@ -84,3 +80,5 @@ How to deal with Internal CSS :
         <span></span>
     </body>
 </html>
+
+
