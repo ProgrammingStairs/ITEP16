@@ -1,0 +1,79 @@
+Units : 
+--------
+1. Px = Pixel = Picture Element
+
+Parent div
+    |-- height : 200px
+    |-- width : 500px 
+    
+Child div
+    |-- height : 100px
+    |-- width : 300px
+    
+On changing dimensions of parent : 
+Parent div
+    |-- height : 50px
+    |-- width : 250px 
+    
+Child div dimension remains same
+    |-- height : 100px
+    |-- width : 300px
+
+2. % percentage
+
+3. em (empherical unit)  
+   by default 
+   1em = 16px 
+   2em = 32px 
+   2.5em = 40px 
+
+   With respect to parent (font-size : 20px)
+   1em = 20px 
+   2em = 40px
+   2.5em = 50px 
+
+   rem (root empherical unit) 
+   by default 
+   1rem = 16px 
+   2rem = 32px 
+   2.5rem = 40px 
+
+   With respect to Html element(root) (font-size : 20px)
+   1rem = 20px 
+   2rem = 40px
+   2.5rem = 50px 
+
+4. vh = viewport height  
+   vw = viewport width 
+
+   1vh = 1% of device height
+   5vh = 5% of device height 
+   
+   device height = 100px
+
+   5vh = 5% of 100px
+       = 5/100 * 100
+       = 5px  
+
+   device height = 650px
+
+   5vh = 5% of 650px
+       = 5/100 * 650
+       = 32.5px  
+
+   1vw = 1% of device width
+   5vw = 5% of device width 
+   
+   device width = 100px
+
+   5vw = 5% of 100px
+       = 5/100 * 100
+       = 5px  
+
+   device width = 650px
+
+   5vw = 5% of 650px
+       = 5/100 * 650
+       = 32.5px  
+
+       

@@ -1,0 +1,50 @@
+Color Code
+-----------
+1. By Color Name
+   color:"red"
+   color:"orange"
+   color:"orchid" etc
+
+2. By RGB
+    R = Red     G = Green    B = Blue
+    rgb(0,0,0)
+          | | |
+    rgb(100,100,100)
+           |   |   |
+     rgb(255,255,255) 
+
+3. By RGBA
+    R = Red     G = Green    B = Blue   
+    A = Alpha (opacity) (0-1)
+        0 means complete transparent 
+        1 means complete Opaque
+    rgba(0,0,0,0.6)
+          | | |
+    rgba(100,100,100,0.3)
+           |   |   |
+     rgba(255,255,255,0.8) 
+
+4. HSL (Hue Saturation Lightness)
+    hsl(45,20%,60%)
+   Hue = degree 0 to 360 
+   Saturation = %
+
+    0%      25%     50%     75%     100%
+    ---------------------------------->
+    Lightness                    Darkness
+
+   Lightness = %
+
+    0%      25%     50%     75%     100%
+    ---------------------------------->
+    Darkness                    Lightness
+
+5. HSLA (Hue Saturation Lightness Alpha)
+      hsla(45,20%,60%,0.7)
+
+6. Hexcode 
+   #RRGGBB ---> shorthand----> #RGB 
+   #000000 ----------------> #000 
+   #ffffff ----------------> #fff 
+   #889977 ----------------> #897 
+   #898765   
