@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 40px;
+            width:200px;
+            margin:10px;
+            background-color: crimson;
+            color:white;
+            font-size: 20px;
+        }
+        #demo1{
+            animation: myanimate1;
+            animation-duration: 4s;
+            animation-timing-function: ease;
+        }
+        @keyframes myanimate1 {
+            from{width:200px;}
+            to{width:600px;}
+        }
+        #demo2{
+            animation: myanimate2;
+            animation-duration: 4s;
+            animation-timing-function: ease-in;
+        }
+        @keyframes myanimate2 {
+            from{width:200px;}
+            to{width:600px;}
+        }
+        #demo3{
+            animation: myanimate3;
+            animation-duration: 4s;
+            animation-timing-function: ease-in-out;
+        }
+        @keyframes myanimate3 {
+            from{width:200px;}
+            to{width:600px;}
+        }
+        #demo4{
+            animation: myanimate4;
+            animation-duration: 4s;
+            animation-timing-function: ease-out;
+        }
+        @keyframes myanimate4 {
+            from{width:200px;}
+            to{width:600px;}
+        }
+
+</style>
+</head>
+<body>
+    <div id="demo1">ease</div>
+    <div id="demo2">ease-in</div>
+    <div id="demo3">ease-in-out</div>
+    <div id="demo4">ease-out</div>
+</body>
+</html>

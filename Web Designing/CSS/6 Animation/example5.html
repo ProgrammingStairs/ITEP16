@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 120px;
+            width: 120px;
+            background-color: crimson;
+            position: absolute;
+            box-shadow: 1px 1px 20px 1px black;
+        }
+        #demo{
+            animation-name: myAnimation;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            /* animation-delay: 2s; */
+            /* animation-direction: alternate; */
+            /* animation-direction: alternate-reverse; */
+        }
+        @keyframes myAnimation{
+            0%{ 
+                top:0;
+                left:0;
+                background-color:red;
+            }
+            20%{ 
+                top:0;
+                left:400px;
+                background-color:green;
+                            border-radius: 25%;
+            }
+            40%{ 
+                top:400px;
+                left:400px;
+                background-color:orange;
+                            border-radius: 50%;
+            }
+            50%{ 
+                top:300px;
+                left:400px;
+                background-color:blue;
+                            border-radius: 50%;
+            }
+            60%{ 
+                top:400px;
+                left:400px;
+                background-color:olive;
+                            border-radius: 50%;
+            }
+            75%{ 
+                top:400px;
+                left:0;
+                background-color:orchid;
+                            border-radius: 25%;
+
+            }
+            100%{ 
+                top:0;
+                left:0;
+                background-color: brown;
+            }
+        }
+        #demo1{
+            animation-name: myAnimation1;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            /* animation-delay: 2s; */
+            /* animation-direction: alternate; */
+            /* animation-direction: alternate-reverse; */
+        }
+        @keyframes myAnimation1{
+            0%{ 
+                top:400px;
+                left:0;
+                background-color:red;
+            }
+            25%{ 
+                top:0;
+                left:400px;
+                background-color:green;
+                            border-radius: 25%;
+            }
+            50%{ 
+                top:0;
+                left:0;
+                background-color:orange;
+                            border-radius: 50%;
+            }
+            60%{ 
+                top:400px;
+                left:0;
+                background-color:olive;
+                            border-radius: 50%;
+            }
+            75%{ 
+                top:0;
+                left:400px;
+                background-color:orchid;
+                            border-radius: 25%;
+
+            }
+            100%{ 
+                top:0;
+                left:0;
+                background-color: brown;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+    <div id="demo1"></div>
+</body>
+</html>

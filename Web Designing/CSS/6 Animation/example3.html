@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo{
+            height: 120px;
+            width: 120px;
+            background-color: crimson;
+            animation-name: myAnimation;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            font-size: 50px;
+            position: absolute;
+            animation-delay: 2s;
+            /* animation-direction: alternate; */
+            animation-direction: alternate-reverse;
+        }
+        @keyframes myAnimation{
+            0%{ 
+                top:0;
+                left:0;
+                background-color:red;
+            }
+            /* 25%{ 
+                top:0;
+                left:400px;
+                background-color:green;
+                            border-radius: 25%;
+            } */
+            50%{ 
+                top:400px;
+                left:400px;
+                background-color:orange;
+                            border-radius: 50%;
+
+            }
+            75%{ 
+                top:400px;
+                left:0;
+                background-color:orchid;
+                            border-radius: 25%;
+
+            }
+            100%{ 
+                top:0;
+                left:0;
+                background-color: brown;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+#container{
+    height:auto;
+}
+#header{
+    height: 70px;
+    border-style: solid;
+    /* background-color: red; */
+}
+#box{
+    height: 400px;
+    border-style: solid;
+    display: flex;
+}
+#box1,#box2,#box3{
+    height: 100%;
+    width: 33%;
+    border-style: solid;
+}
+#bottom{
+    height: 175px;
+    border-style: solid;
+    display: flex;
+}
+#leftbottom,#rightbottom{
+    height: 80px;
+    border-style: solid;
+    width: 35%;
+    margin-top: 50px;
+    margin-left: 120px;
+}

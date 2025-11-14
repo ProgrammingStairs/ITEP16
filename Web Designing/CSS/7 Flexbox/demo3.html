@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo1{
+            height: auto;
+            padding: 20px;
+            width:90%;
+            margin:auto;
+            border-style: solid;
+            display: flex;
+            flex-direction: row;
+            /* justify-content: space-around; */
+            /* justify-content: space-between; */
+            /* justify-content: space-evenly; */
+            /* justify-content: flex-end; */
+            justify-content: center;
+            /* justify-content: flex-start; */
+            text-align: center;
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */
+            /* align-items: center; */
+            align-items: baseline;
+            /* align-items: first baseline; */
+            /* align-items: last baseline; */
+        }
+        .innerdiv{
+            border-style: solid;
+            margin: 10px;
+            width: 130px;
+        }
+        #innerdiv1{
+            height: 100px;
+            order:3;
+        }
+        #innerdiv2{
+            height: 180px;
+            order:5;
+        }
+        #innerdiv3{
+            height: 130px;
+            order:1;
+        }
+        #innerdiv4{
+            height: 160px;
+            order:2;
+        }
+        #innerdiv5{
+            height: 110px;
+            order:4;
+        }
+
+</style>
+</head>
+<body>
+    <div id="demo1">
+        <div class="innerdiv" id="innerdiv1"><h1>1 Lorem ipsum dolor sit amet.</h1></div>
+        <div class="innerdiv" id="innerdiv2"><h1>2</h1></div>
+        <div class="innerdiv" id="innerdiv3"><h1>3</h1></div>
+        <div class="innerdiv" id="innerdiv4"><h1>4</h1></div>
+        <div class="innerdiv" id="innerdiv5"><h1>5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, consequatur.</h1></div>
+    </div>
+</body>
+</html>
