@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #container{
+            height: auto;
+            width: 100%;
+        }
+        #banner{
+            height: 300px;
+        }
+        #bannerImg{
+            height: 300px;
+            width: 100%;
+        }
+        #profile{
+            height:150px;
+            width: 150px;
+            margin-left: 70px;
+            margin-top: -75px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        #profileImg{
+             height:150px;
+            width: 150px;
+            border-radius: 50%;
+        }
+        #section{
+            height: 50px;
+            padding: 50px;
+            width: 800px;
+            /* background-color: grey; */
+            margin: auto;
+        }
+        input[type="text"]{
+            border-radius: 10px 0px 0px 10px;
+            height:50px;
+            width: 550px;
+            font-size: 17px;
+            text-align: center;
+            outline: 0;
+            box-shadow: 1px 1px 20px 1px;
+            border-width: 0px;
+        }
+        input[type="submit"]{
+            border-radius: 0px 10px 10px 0px;
+            box-shadow: 1px 1px 20px 1px black;
+            height:54.5px;
+            margin-left: -4.5px;
+            width: 180px;
+            font-size: 17px;
+            text-align: center;
+            border-width: 0px;
+            background-color: #234567;
+            color:white;
+        }
+        input[type="submit"]:hover{
+            background-color: crimson;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="banner">
+            <img src="public/images/bannerImg.webp" id="bannerImg" alt="">
+        </div>
+        <div id="profile">
+            <img src="public/images/user.jpg" id="profileImg" alt="">
+        </div>
+        <div id="section">
+            <form action="">
+                <input type="text" placeholder="Enter Search Content">
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

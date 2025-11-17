@@ -1,0 +1,52 @@
+        *{
+            margin: 0;
+             background-color: beige;
+        }
+        #container{
+            height: auto;
+            width: 100%;
+        }
+        #left{
+            width: 25%;
+            /* border-style: solid; */
+            height: 674px;
+            float: left;
+            position: fixed;
+            background-color: tan;
+        }
+        #right{
+            background-color: beige;
+            width: 75%;
+            margin-left: 25%;
+            /* border-style: solid; */
+            height: auto;
+            float: left;
+        }
+        #banner{
+            height: 300px;
+        }
+        #bannerImg{
+            height: 300px;
+            width: 100%;
+        }
+        #profile{
+            height:150px;
+            width: 150px;
+            margin-left: 70px;
+            margin-top: -75px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        #profileImg{
+             height:150px;
+            width: 150px;
+            border-radius: 50%;
+        }
+        #section{
+            height: 130px;
+            width: 80%;
+            margin: auto;
+            margin-top: 50px;
+            border-radius: 20px;
+            background-color: black;
+        }
