@@ -1,0 +1,38 @@
+*{
+    margin:0;
+}
+#box{
+    background-color: black;
+    height: auto;
+    padding: 30px;
+    float: left;
+}
+#innerbox{
+    height: auto;
+    background-color: whitesmoke;
+    padding: 10px;
+    width: 20%;
+    float: left;
+    margin: 17.5px;
+}
+@media screen and (max-width:1160px){
+#innerbox{
+    width: 44%;
+}
+}
+@media screen and (max-width:977px){
+#innerbox{
+    width: 43%;
+}
+}
+@media screen and (max-width:846px){
+#innerbox{
+    width: 42%;
+}
+}
+
+@media screen and (max-width:747px){
+#innerbox{
+    width: 93%;
+}
+}
