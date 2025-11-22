@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="public/css/service.css">
+    <link rel="stylesheet" href="public/css/contact.css">
+    <link rel="stylesheet" href="public/css/footer.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- offcanvas starts -->
+<button class="btn btn-default" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+     <!-- offcanvas ends -->
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" tabindex="-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Connect</a>
+        </li>
+        <!-- modal starts -->
+         <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Lets Connect With Us</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- form starts -->
+         <form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary w-100" >Submit</button>
+</form>
+         <!-- form ends -->
+      </div>
+     
+    </div>
+  </div>
+</div>
+         <!-- modal ends -->
+        
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="row">
+  
+  <div class="col-lg-9">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/img3.webp" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/img3.webp" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/img3.webp" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  </div>
+  <div class="col-lg-3">
+    <!-- accordian starts -->
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Mission
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Vision
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Login
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+        Register
+      </button>
+    </h2>
+    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+    </div>
+  </div>
+</div>   
+  <!-- accordian ends -->
+  </div>
+</div>  
+  <!-- services section start -->
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<section class="section services-section" id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h2>What I Do</h2>
+                    <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- feaure box -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="feature-box-1">
+                    <div class="icon">
+                        <i class="fa fa-desktop"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h5>Unique design</h5>
+                        <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+            <!-- feaure box -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="feature-box-1">
+                    <div class="icon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h5>Different Layout</h5>
+                        <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+            <!-- feaure box -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="feature-box-1">
+                    <div class="icon">
+                        <i class="fa fa-comment"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h5>Make it Simple</h5>
+                        <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+            <!-- feaure box -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="feature-box-1">
+                    <div class="icon">
+                        <i class="fa fa-image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h5>Responsiveness</h5>
+                        <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+            <!-- feaure box -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="feature-box-1">
+                    <div class="icon">
+                        <i class="fa fa-th"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h5>Testing for Perfection</h5>
+                        <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+            <!-- feaure box -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="feature-box-1">
+                    <div class="icon">
+                        <i class="fa fa-cog"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h5>Advanced Options</h5>
+                        <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+        </div>
+    </div>
+</section>
+   <!-- services section ends -->
+    <!-- contact us starts -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<section class="section gray-bg" id="contactus">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h2>Get In Touch</h2>
+                    <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites</p>
+                </div>
+            </div>
+        </div>
+        <div class="row flex-row-reverse">
+            <div class="col-md-7 col-lg-8 m-15px-tb">
+                <div class="contact-form">
+                     <form action="/" method="post" class="contactform contact_form" id="contact_form">
+                        <div class="returnmessage valid-feedback p-15px-b" data-success="Your message has been received, We will contact you soon."></div>
+                        <div class="empty_notice invalid-feedback p-15px-b"><span>Please Fill Required Fields</span></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input id="name" type="text" placeholder="Full Name" class="form-control"> 
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input id="email" type="text" placeholder="Email Address" class="form-control">  
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input id="subject" type="text" placeholder="Subject" class="form-control"> 
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea id="message" placeholder="Message" class="form-control" rows="3"></textarea> 
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="send">
+                                    <a id="send_message" class="px-btn theme" href="#"><span>Contact Us</span> <i class="arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-5 col-lg-4 m-15px-tb">
+                <div class="contact-name">
+                    <h5>Mail</h5>
+                    <p>info@domainname.com</p>
+                </div>
+                <div class="contact-name">
+                    <h5>Visit My Studio</h5>
+                    <p>Warnwe Park Streetperrine, <br>FL 33157 New York City</p>
+                </div>
+                <div class="contact-name">
+                    <h5>Phone</h5>
+                    <p>+01 123 654 8096</p>
+                </div>
+                <div class="social-share nav">
+                    <a class="dribbble" href="#">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                    <a class="behance" href="#">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                    <a class="linkedin" href="#">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+     <!-- contact us ends -->
+      <!-- footer starts -->
+       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<footer class="footer_area section_padding_130_0">
+      <div class="container">
+        <div class="row">
+          <!-- Single Widget-->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-footer-widget section_padding_0_130">
+              <!-- Footer Logo-->
+              <div class="footer-logo mb-3"></div>
+              <p>Appland is completely creative, lightweight, clean app landing page.</p>
+              <!-- Copywrite Text-->
+              <div class="copywrite-text mb-5">
+                <p class="mb-0">Made with <i class="lni-heart mr-1"></i>by<a class="ml-1" href="https://wrapbootstrap.com/user/DesigningWorld">Designing World</a></p>
+              </div>
+              <!-- Footer Social Area-->
+              <div class="footer_social_area"><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype"><i class="fa fa-skype"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></div>
+            </div>
+          </div>
+          <!-- Single Widget-->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-footer-widget section_padding_0_130">
+              <!-- Widget Title-->
+              <h5 class="widget-title">About</h5>
+              <!-- Footer Menu-->
+              <div class="footer_menu">
+                <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Corporate Sale</a></li>
+                  <li><a href="#">Terms &amp; Policy</a></li>
+                  <li><a href="#">Community</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Single Widget-->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-footer-widget section_padding_0_130">
+              <!-- Widget Title-->
+              <h5 class="widget-title">Support</h5>
+              <!-- Footer Menu-->
+              <div class="footer_menu">
+                <ul>
+                  <li><a href="#">Help</a></li>
+                  <li><a href="#">Support</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Term &amp; Conditions</a></li>
+                  <li><a href="#">Help &amp; Support</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Single Widget-->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-footer-widget section_padding_0_130">
+              <!-- Widget Title-->
+              <h5 class="widget-title">Contact</h5>
+              <!-- Footer Menu-->
+              <div class="footer_menu">
+                <ul>
+                  <li><a href="#">Call Centre</a></li>
+                  <li><a href="#">Email Us</a></li>
+                  <li><a href="#">Term &amp; Conditions</a></li>
+                  <li><a href="#">Help Center</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+       <!-- footer ends -->
+</body>
+</html>
