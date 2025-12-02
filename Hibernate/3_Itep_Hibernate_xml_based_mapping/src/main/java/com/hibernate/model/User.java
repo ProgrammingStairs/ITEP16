@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class User{
 	String uid,username,email,password;
-	LocalDateTime createdat=LocalDateTime.now(),updatedat=LocalDateTime.now();
+	LocalDateTime createdat,updatedat;
 
 	public LocalDateTime getCreatedat() {
 		return createdat;

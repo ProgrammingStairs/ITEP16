@@ -12,18 +12,14 @@ import org.hibernate.Transaction;
 import com.hibernate.model.User;
 import com.hibernate.utils.HibernateUtils;
 
-public class HibernateMain3 {
+public class HibernateMain {
 	public static void main(String args[]) {
 		createDatabaseIfNotExists();
 		User user = new User();
 //		System.out.println("LocalDateTime.now() : "+LocalDateTime.now());
 		user.setUsername("jackson jack");
-		user.setEmail("jackson@gmail.com");
+		user.setEmail("jackson123@gmail.com");
 		user.setPassword("jackson@123");
-		// option-1
-		user.setCreatedat(LocalDateTime.now());	
-		user.setUpdatedat(LocalDateTime.now());	
-
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		Transaction tx = null;
 		// insertion of data
@@ -121,25 +117,3 @@ public class HibernateMain3 {
 	}
 }
 
-/*
- option-I
- in case of user.setCreatedat(LocalDateTime.now()); we only needs <property name="createdat" column="createdat"></property>
- in case of user.setupdatedat(LocalDateTime.now()); we only needs <property name="updatedat" column="createdat"></property>
- 
- 
- option-II
- run this on mysql command line client
- 
- ALTER TABLE your_table
-MODIFY created_at DATETIME DEFAULT CURRENT_TIMESTAMP;
-
-ALTER TABLE your_table
-MODIFY updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
- 
-<property name="createdat" column="createdat"  type="org.hibernate.type.LocalDateTimeType" insert="false" update="false" generated="insert"></property>
-<property name="updatedat" column="updatedat"  type="org.hibernate.type.LocalDateTimeType" insert="false" update="false" generated="always"></property>
-
-option-III
-@CreationTimestamp annotation
-@UpdateTimestamp annotation
- */

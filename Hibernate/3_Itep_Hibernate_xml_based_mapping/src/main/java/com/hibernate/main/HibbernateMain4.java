@@ -12,18 +12,14 @@ import org.hibernate.Transaction;
 import com.hibernate.model.User;
 import com.hibernate.utils.HibernateUtils;
 
-public class HibernateMain3 {
+public class HibbernateMain4 {
 	public static void main(String args[]) {
 		createDatabaseIfNotExists();
 		User user = new User();
 //		System.out.println("LocalDateTime.now() : "+LocalDateTime.now());
 		user.setUsername("jackson jack");
-		user.setEmail("jackson@gmail.com");
+		user.setEmail("jackson123@gmail.com");
 		user.setPassword("jackson@123");
-		// option-1
-		user.setCreatedat(LocalDateTime.now());	
-		user.setUpdatedat(LocalDateTime.now());	
-
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		Transaction tx = null;
 		// insertion of data

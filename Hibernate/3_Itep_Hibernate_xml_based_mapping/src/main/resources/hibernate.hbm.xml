@@ -11,7 +11,7 @@
 		<property name="username" column="username" type="string"></property>
 		<property name="email" column="email" type="string"></property>
 		<property name="password" column="password" type="string"></property>
-		<property name="createdat" column="createdat" type="timestamp" insert="false" update="false" generated="insert"></property>
-		<property name="updatedat" column="updatedat" type="timestamp" insert="false" update="false" generated="always"></property>
+		<property name="createdat" column="createdat"  type="org.hibernate.type.LocalDateTimeType" insert="false" update="false" generated="insert"></property>
+		<property name="updatedat" column="updatedat"  type="org.hibernate.type.LocalDateTimeType" insert="false" update="false" generated="always"></property>
 	</class>
 </hibernate-mapping>
