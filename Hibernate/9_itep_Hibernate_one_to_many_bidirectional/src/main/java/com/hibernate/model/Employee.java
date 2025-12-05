@@ -5,11 +5,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="emp_one_many_uni")
-public class Employee{
+@Table(name="emp_one_many_bi")
+public class Employee{ // owning side
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +20,18 @@ public class Employee{
 	
 	@Column(name="empname")
 	String empname;
+
+	@ManyToOne
+	@JoinColumn(name="dept_id")
+	Department department;
+	
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 
 	public int getEid() {
 		return eid;

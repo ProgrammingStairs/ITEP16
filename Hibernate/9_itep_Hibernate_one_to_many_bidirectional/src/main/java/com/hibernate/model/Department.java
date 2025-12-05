@@ -14,8 +14,8 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="dept_one_many_uni")
-public class Department{ // owning side
+@Table(name="dept_one_many_bi")
+public class Department{ // inverse side | non-owning side
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,8 +24,7 @@ public class Department{ // owning side
 	@Column(name="dept_name")
 	String deptName;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="dept_id")
+	@OneToMany(mappedBy = "department")
 	Set<Employee> employee = new HashSet<Employee>();
 
 	public int getDid() {
@@ -52,5 +51,9 @@ public class Department{ // owning side
 		this.employee = employee;
 	}
 	
-	
+	public void addDepartment(Employee e) {
+		e.setDepartment(this);
+		employee.add(e);
+		this.setEmployee(employee);
+    }
 }

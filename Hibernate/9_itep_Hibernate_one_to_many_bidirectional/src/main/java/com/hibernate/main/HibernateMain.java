@@ -23,14 +23,17 @@ public class HibernateMain{
 		Employee e2 = new Employee();
 		e2.setEmpname("Peter Parker");
 		
-		dept.getEmployee().add(e1);
-		dept.getEmployee().add(e2);
+		dept.addDepartment(e1);
+		dept.addDepartment(e2);
 		
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		Transaction tx=null;
 		try {
 			tx = session.beginTransaction();
 			session.persist(dept);
+			session.persist(e1);
+			session.persist(e2);
+			
 			tx.commit(); // session.flush(); is called automatically when tx.commit() called, or u can write explicitly session.flush() before tx.commit()			
 		}catch(Exception e) {
 			if(tx!=null) {
