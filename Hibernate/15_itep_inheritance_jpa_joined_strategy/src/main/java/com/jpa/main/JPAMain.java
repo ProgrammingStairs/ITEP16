@@ -1,0 +1,52 @@
+package com.jpa.main;
+import java.util.List;
+
+import com.jpa.model.CarDemo;
+import com.jpa.model.TruckDemo;
+import com.jpa.model.Vehicle;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Persistence;
+
+public class JPAMain{
+	public static void main(String args[]) {
+		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("mypunit");
+		EntityManager em = emf.createEntityManager();
+		
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+			
+		Vehicle vec = new Vehicle();
+		vec.setVehicle_name("Vehicle");
+		
+		CarDemo car = new CarDemo();
+		car.setDoors(4);
+		car.setVehicle_name("Kia");
+		
+		TruckDemo truck = new TruckDemo();
+		truck.setContainer(4);
+		truck.setVehicle_name("ForceMotors");
+		
+			try {	
+				em.persist(vec);
+				em.persist(car);
+				em.persist(truck);
+				
+				tx.commit();
+				
+				List<Vehicle> vList = em.createQuery("from Vehicle", Vehicle.class).getResultList(); 
+				for(Vehicle v :  vList)
+					System.out.println("\nVehicle Id : "+v.getVid()+"\nVehicleName : "+v.getVehicle_name()+"\nClass Name : "+v.getClass().getSimpleName());
+				
+			}catch(Exception e) {
+				if(tx!=null)
+					tx.rollback();
+				System.out.println("Rollback takes place..!!");
+			}
+			em.close();
+		emf.close();
+	}
+}
