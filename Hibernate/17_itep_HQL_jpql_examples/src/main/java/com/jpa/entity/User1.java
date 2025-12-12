@@ -5,12 +5,36 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedNativeQuery;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 
 @Entity
+@NamedQuery(
+		name="User1.findByEmail",
+		query="select u from User1 u where u.email=:email"
+)
+
+@NamedNativeQuery(
+		name="User1.findByEmailNative",
+		query="select * from user_hql where email=?",
+		resultClass=User1.class
+)
+
+@NamedNativeQuery(
+		name="User1.getUsernameAndEmail",
+		query="select username,email from user_hql"
+)
+
 @Table(name="user_hql")
-public class User{
-	
+public class User1{
+	/*
+	 If you map User and User1 to two different tables, the problem is fully solved.
+
+Hibernate only throws the error because two entities point to the same table (user_hql).
+Once each entity has its own table, Hibernate will work normally.
+ 
+	*/
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="uid")
