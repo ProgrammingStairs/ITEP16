@@ -1,4 +1,4 @@
-Abstraction : Abstracttion is the process of hiding implementation details and showing only functionality to the user.
+Abstraction : Abstraction is the process of hiding implementation details and showing only functionality to the user.
 Here we can achieve abstraction with the help of : 
     a. Abstract class
     b. Interface 
