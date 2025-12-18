@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Servlet CRUD Example</title>
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<blockquote>
+			<h2>Servlet CRUD Example</h2>
+			<div id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="login.html">Login</a></li>
+					<li><a href="register.html">Register</a></li>
+					<li><a href="">About</a></li>
+					<li><a href="">Contact</a></li>
+				</ul>
+			</div>
+			<div>
+				<h2>Registration Form</h2>
+				<form action="RegistrationServlet" method="post">
+					<input
+						type="text"
+						placeholder="Enter Username"
+						name="username"
+						id="username"
+						required
+					> <br>
+					<input
+						type="email"
+						placeholder="Enter Email"
+						name="email"
+						id="email"
+						required
+					> <br>
+					<input
+						type="password"
+						placeholder="Enter Password"
+						name="password"
+						id="password"
+						required
+					> <br>
+					<input
+						type="text"
+						placeholder="Enter Address"
+						name="address"
+						id="address"
+						required
+					> <br> <br>
+					<input
+						type="submit"
+						value="Register"
+					>
+					<input
+						type="reset"
+						value="Reset"
+					> <br>
+				</form>
+			</div>
+		</blockquote>
+	</body>
+</html>
