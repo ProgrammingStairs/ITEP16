@@ -27,5 +27,23 @@
   	<servlet-name>LoginServlet</servlet-name>
   	<url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>ProfileServlet</servlet-name>
+  	<servlet-class>com.servlet.controller.ProfileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ProfileServlet</servlet-name>
+  	<url-pattern>/ProfileServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>UpdateProfileForm</servlet-name>
+  	<servlet-class>com.servlet.controller.UpdateProfileForm</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UpdateProfileForm</servlet-name>
+  	<url-pattern>/UpdateProfileForm</url-pattern>
+  </servlet-mapping>
   
 </web-app>

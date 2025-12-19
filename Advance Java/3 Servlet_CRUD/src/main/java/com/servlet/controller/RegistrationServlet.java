@@ -3,8 +3,10 @@ package com.servlet.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import com.servlet.dao.UserDao;
 import com.servlet.dto.UserDto;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,7 +30,27 @@ public class RegistrationServlet extends HttpServlet{
 		userDto.setPassword(password);
 		userDto.setAddress(address);
 		
-		
+		UserDao userDao = new UserDao();
+		int i = userDao.addUser(userDto);
+		if(i==1) {
+			System.out.println("User added successfully");
+			out.print("<script>alert('User added successfully')</script>");
+			//out.print("User Added successfully");
+			RequestDispatcher rd = request.getRequestDispatcher("login.html");
+			rd.include(request, response);
+			
+		}else if(i==2) {
+			out.print("<script>alert('Duplicate Email | Please try with another Email')</script>");
+			RequestDispatcher rd = request.getRequestDispatcher("register.html");
+			rd.include(request, response);
+		}
+		else {
+			System.out.println("Error while Adding User");
+			out.print("<script>alert('Error while Adding User')</script>");
+			//out.print("Error while Adding User");
+			RequestDispatcher rd = request.getRequestDispatcher("register.html");
+			rd.include(request, response);
+		}
 	}
 	
 	@Override
