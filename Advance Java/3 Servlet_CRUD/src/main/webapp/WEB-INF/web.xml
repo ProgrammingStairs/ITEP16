@@ -45,5 +45,43 @@
   	<servlet-name>UpdateProfileForm</servlet-name>
   	<url-pattern>/UpdateProfileForm</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>UpdateServlet</servlet-name>
+  	<servlet-class>com.servlet.controller.UpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UpdateServlet</servlet-name>
+  	<url-pattern>/UpdateServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<servlet-class>com.servlet.controller.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/LogoutServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>DeActivateServlet</servlet-name>
+  	<servlet-class>com.servlet.controller.DeActivateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DeActivateServlet</servlet-name>
+  	<url-pattern>/DeActivateServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>ViewAllUsersServlet</servlet-name>
+  	<servlet-class>com.servlet.controller.ViewAllUsersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ViewAllUsersServlet</servlet-name>
+  	<url-pattern>/ViewAllUsersServlet</url-pattern>
+  </servlet-mapping>
+  
+  
   
 </web-app>

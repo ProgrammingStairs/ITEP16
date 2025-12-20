@@ -3,6 +3,8 @@ package com.servlet.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.servlet.connection.GetConnection;
 import com.servlet.dto.UserDto;
@@ -49,4 +51,107 @@ public class UserDao{
 		}
 		return status;
 	}
+
+	// search user by email
+	public UserDto getUserByEmail(String email) {
+		UserDto user = new UserDto();
+		try {
+			Connection con = GetConnection.getConnect();
+			String selectQuery = "select * from servlet_user where email=?";
+			PreparedStatement ps = con.prepareStatement(selectQuery);
+			ps.setString(1, email);
+			
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				user.setUid(rs.getInt(1));
+				user.setUsername(rs.getString(2));
+				user.setEmail(rs.getString(3));
+				user.setPassword(rs.getString(4));
+				user.setAddress(rs.getString(5));
+			}
+				
+		}catch(Exception e) {
+			System.out.println("Error while fetching user by email : "+e);
+		}
+		return user;
+	}
+
+	// updating user 
+	public int updateUser(UserDto userDto) {
+		int i=0;
+		try {
+			Connection con = GetConnection.getConnect();
+			String updateQuery = "update servlet_user set username=?,password=?,address=? where email=?";
+			PreparedStatement ps = con.prepareStatement(updateQuery);
+			ps.setString(1, userDto.getUsername());
+			ps.setString(2, userDto.getPassword());
+			ps.setString(3, userDto.getAddress());
+			ps.setString(4, userDto.getEmail());
+			
+			i = ps.executeUpdate();
+			System.out.println("User Updated successfully in dao");
+		}catch(Exception e) {
+			System.out.println("Exception : "+e);
+		}
+		return i;
+	}
+	
+	// deactivating user
+	public int deActivateUser(String email) {
+		int i=0;
+		try {
+			Connection con = GetConnection.getConnect();
+			String updateQuery = "delete from servlet_user where email=?";
+			PreparedStatement ps = con.prepareStatement(updateQuery);
+			ps.setString(1, email);
+			
+			i = ps.executeUpdate();
+			System.out.println("User Deleted successfully in dao");
+		}catch(Exception e) {
+			System.out.println("Exception : "+e);
+		}
+		return i;
+	}
+
+	// getAllUsersList 
+	public List<UserDto> getAllUsers(){
+		List<UserDto> list = new ArrayList<UserDto>();
+		try {
+			Connection con = GetConnection.getConnect();
+			String selectQuery = "select * from servlet_user";
+			PreparedStatement ps = con.prepareStatement(selectQuery);
+			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				UserDto user = new UserDto();
+				
+				user.setUid(rs.getInt(1));
+				user.setUsername(rs.getString(2));
+				user.setEmail(rs.getString(3));
+				user.setPassword(rs.getString(4));
+				user.setAddress(rs.getString(5));	
+				
+				list.add(user);
+			}
+		}catch(Exception e) {
+			System.out.println("Exception : "+e);
+		}
+		return list;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
