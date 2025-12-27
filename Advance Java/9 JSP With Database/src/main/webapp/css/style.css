@@ -1,0 +1,19 @@
+*{
+	font-family:candara;
+}
+#nav{
+	height: 40px;
+	background-color: black;
+}
+#nav ul{
+	list-style: none;
+	padding-top: 8px;
+}
+#nav ul li{
+	display: inline;
+}
+#nav ul li a{
+	text-decoration: none;
+	margin-left: 30px;
+	color:white;
+}
