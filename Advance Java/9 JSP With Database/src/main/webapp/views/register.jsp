@@ -8,19 +8,10 @@
 	</head>
 <body>
 		<blockquote>
-			<h2>JSP CRUD Example</h2>
-			<div id="nav">
-				<ul>
-					<li><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
-					<li><a href="${pageContext.request.contextPath}/views/login.jsp">Login</a></li>
-					<li><a href="${pageContext.request.contextPath}/views/register.jsp">Register</a></li>
-					<li><a href="">About</a></li>
-					<li><a href="">Contact</a></li>
-				</ul>
-			</div>
+			<jsp:include page="header.jsp"></jsp:include>			
 			<div>
 				<h2>Registration Form</h2>
-				<form action="RegistrationServlet" method="post">
+				<form action="${pageContext.request.contextPath}/views/registerData.jsp" method="post">
 					<input
 						type="text"
 						placeholder="Enter Username"
