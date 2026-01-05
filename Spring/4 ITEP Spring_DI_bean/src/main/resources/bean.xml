@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+	<context:annotation-config/>
+	
+	<bean id="smsService" class="com.spring.SMSService"></bean>
+	<bean id="helloService" class="com.spring.HelloService">
+		<property name="helloMessage" value="This is HelloService Bean Message"></property>
+	</bean>
+	<bean id="emailService" class="com.spring.EmailService">
+		<constructor-arg value="This is email service bean message"/>
+	</bean>
+	
+	<bean id="userService" class="com.spring.UserService">
+		<constructor-arg ref="emailService"/>
+		<property name="helloService" ref="helloService"></property>
+	</bean>
+	
+</beans>

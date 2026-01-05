@@ -1,7 +1,9 @@
 package com.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService{
 	private EmailService emailService;
 	private HelloService helloService;
@@ -28,6 +30,7 @@ public class UserService{
 	
 	public void actionPerformed() {
 		emailService.printEmailMessage();
+		helloService.setHelloMessage("This is hello message");
 		helloService.getHelloMessage();
 		smsService.printSmsService();
 	}
