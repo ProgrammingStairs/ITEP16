@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import com.spring.service.EmailService;
 import com.spring.service.HelloService;
 import com.spring.service.SmsService;
-
+@Component
 public class MainApplication {
 	private EmailService emailService;
 	private SmsService smsService;
