@@ -1,0 +1,123 @@
+Example 1: CRUD using DataSource.getConnection() (NO JdbcTemplate)
+
+🔹 Configuration (DataSource only)
+
+@Configuration
+@ComponentScan("com.spring")
+public class AppConfig {
+
+    @Bean
+    public DataSource dataSource() {
+        DriverManagerDataSource ds = new DriverManagerDataSource();
+        ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        ds.setUrl("jdbc:mysql://localhost:3306/itep16");
+        ds.setUsername("root");
+        ds.setPassword("root");
+        return ds;
+    }
+}
+
+🔹 DAO using dataSource.getConnection()
+
+@Repository
+public class StudentDao {
+
+    @Autowired
+    private DataSource dataSource;
+
+    public void save(Student s) throws Exception {
+
+        Connection con = dataSource.getConnection(); // borrow or create
+        String sql = "INSERT INTO student(name,email) VALUES (?,?)";
+
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1, s.getName());
+        ps.setString(2, s.getEmail());
+
+        ps.executeUpdate();
+
+        con.close(); // return (or close if no pool)
+    }
+
+    public Student findById(int id) throws Exception {
+
+        Connection con = dataSource.getConnection();
+        PreparedStatement ps =
+            con.prepareStatement("SELECT * FROM student WHERE id=?");
+
+        ps.setInt(1, id);
+        ResultSet rs = ps.executeQuery();
+
+        Student s = null;
+        if (rs.next()) {
+            s = new Student(
+                rs.getInt("id"),
+                rs.getString("name"),
+                rs.getString("email")
+            );
+        }
+
+        con.close();
+        return s;
+    }
+}
+
+
+✔ This is pure JDBC style
+✔ Works in Advance Java + Spring
+
+Note : Every time you call:
+
+Connection con = datasource.getConnection();
+
+-- A new physical database connection is created.
+-- When you call con.close(), that connection is destroyed.
+-- No reuse, no pooling, just fresh connection every time.
+
+Note : 
+-- If we use HikariDataSource then we can deal with Connection pooling and create a pool of connection and every time on close it will not end or close the connection rather it will return connection back to connection pool for reuse.
+
+
+3️⃣ Example 2: CRUD using JdbcTemplate (NO getConnection())
+🔹 Configuration
+@Bean
+public JdbcTemplate jdbcTemplate(DataSource ds) {
+    return new JdbcTemplate(ds);
+}
+
+🔹 DAO using JdbcTemplate
+@Repository
+public class StudentDao {
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    public void save(Student s) {
+        jdbcTemplate.update(
+            "INSERT INTO student(name,email) VALUES (?,?)",
+            s.getName(),
+            s.getEmail()
+        );
+    }
+
+    public Student findById(int id) {
+        return jdbcTemplate.queryForObject(
+            "SELECT * FROM student WHERE id=?",
+            new BeanPropertyRowMapper<>(Student.class),
+            id
+        );
+    }
+}
+
+
+✔ Less code
+✔ Best for beginners
+✔ Connection handling is hidden
+
+Note : When you call:
+
+Connection con = datasource.getConnection();
+
+-- HikariCP borrows a connection from the pool.
+-- con.close() returns the connection to the pool, it is NOT destroyed.
+-- The same set of connections is reused across DAO calls or requests.
