@@ -3,7 +3,7 @@
   <groupId>com.spring</groupId>
   <artifactId>9_itep_spring_hibernate_orm_jpa</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-   <dependencies>
+  <dependencies>
   <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 <dependency>
     <groupId>org.springframework</groupId>

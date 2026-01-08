@@ -16,18 +16,33 @@ public class UserDaoImpl implements UserDao {
 	private EntityManager em;
 	
 	@Override
-	public void addUser(User user) {}
-	@Override
-	public void updateUser(User user) {}
-	@Override
-	public void deleteUser(int id) {}
-	@Override
-	public User getUserById(int id) {
-		return null;
+	public void addUser(User user) {
+		em.persist(user);
+		System.out.println("User Added successfully");
 	}
 	@Override
+	public void updateUser(User user) {
+		em.merge(user);
+		System.out.println("User Updated successfully");
+	}
+	@Override
+	public void deleteUser(int id) {
+		User user = em.find(User.class, id);
+		if(user!=null) {
+			em.remove(user);
+			System.out.println("User deleted successfully");
+		}else
+			System.out.println("User Not Found");
+	}
+	@Override
+	public User getUserById(int id) {
+		User user = em.find(User.class, id);
+		return user;
+	}
+	
+	@Override
 	public List<User> getAllUser(){
-		return null;
+		return em.createQuery("from User", User.class).getResultList();
 	}
 
 }

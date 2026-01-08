@@ -83,6 +83,8 @@ import com.spring.model.User;
 @Repository
 public class UserDaoImpl implements UserDao{
 	
+	// needs to create table manually
+	
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	public UserDaoImpl(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
 		this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
