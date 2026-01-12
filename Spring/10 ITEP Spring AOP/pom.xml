@@ -17,7 +17,14 @@
     <version>6.2.6</version>
 </dependency>
 
-
+<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjweaver</artifactId>
+    <version>1.9.21</version>
+    <!-- needs to remove scope runtime from here, i removed already <scope>runtime</scope> -->
+    
+</dependency>
 
   </dependencies>
 

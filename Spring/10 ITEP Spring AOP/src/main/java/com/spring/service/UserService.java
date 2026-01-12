@@ -17,5 +17,9 @@ public class UserService {
 		//System.out.println("showUserService method invoked");
 		throw new RuntimeException("Runtime exception takes place");
 	}
+	
+	public String printName() {
+		return "Andrew Anderson";
+	}
 
 }
