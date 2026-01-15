@@ -13,8 +13,8 @@
 			var password = document.getElementById("password").value;
 			var genderObj = document.querySelector("input[name='gender']:checked");
 			var gender = genderObj ? genderObj.value : "";
-			var hobbyObj = document.querySelectorAll("input[name='hobbies']:checked");
-			var hobbies = [...hobbyObj].map(obj => obj.value).join(" , ");
+			var hobbiesObj = document.querySelectorAll('input[name="hobbies"]:checked');
+			var hobbies = hobbiesObj ? [...hobbiesObj].map(hobby=>hobby.value).join(" , ") : "";
 			var subject = document.getElementById("subject").value;
 			
 			var obj = {username,email,password,gender,hobbies,subject};
@@ -22,11 +22,13 @@
 			fetch("<%=request.getContextPath()%>/registerData",{
 				method:"POST",
 				headers:{
-					'Content-Type':'application/json'
+					'content-type':'application/json'
 				},
 				body:JSON.stringify(obj)
 			}).then(response => response.json())
 				.then(data => {
+					console.log("------------ ",data);
+					
 					var fields = ["username","email","password","gender","hobbies","subject"];
 					fields.forEach((f)=>{
 						document.getElementById("err_"+f).innerHTML = "";
@@ -54,7 +56,7 @@
 			<a href="${pageContext.request.contextPath}/student/">StudentPortal</a>
 		<hr>
 		<h2>Registration Form</h2>
-		<form:form modelAttribute="user"  method="post">
+		<form:form modelAttribute="user">
 			<form:input type="text" placeholder="Enter Username" id="username" path="username"/>
 			<span class="error_message" id="err_username"></span> <br>
 

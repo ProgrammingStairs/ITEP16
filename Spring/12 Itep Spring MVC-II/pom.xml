@@ -54,12 +54,6 @@
     <artifactId>mysql-connector-j</artifactId>
     <version>8.0.33</version>
 </dependency>
-<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
-<dependency>
-    <groupId>org.hibernate.validator</groupId>
-    <artifactId>hibernate-validator</artifactId>
-    <version>6.2.5.Final</version>
-</dependency>
 <!-- Source: https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
 <dependency>
     <groupId>jakarta.validation</groupId>
@@ -67,13 +61,25 @@
     <version>3.0.2</version>
     <scope>compile</scope>
 </dependency>
-<!-- Source: https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
+
+<!-- version Important -->
+
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 <dependency>
-    <groupId>tools.jackson.core</groupId>
+    <groupId>com.fasterxml.jackson.core</groupId>
     <artifactId>jackson-databind</artifactId>
-    <version>3.0.2</version>
-    <scope>compile</scope>
+    <version>2.20.0</version>
 </dependency>
+
+<!-- version Important -->
+
+<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+<dependency>
+    <groupId>org.hibernate.validator</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>8.0.1.Final</version>
+</dependency>
+
 <!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
 <dependency>
     <groupId>com.zaxxer</groupId>
