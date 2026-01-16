@@ -8,11 +8,7 @@
 <body>
 	<blockquote>
 		<h2>Example of Spring MVC</h2>
-		<hr>
-			<a href="${pageContext.request.contextPath}/">Home</a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="${pageContext.request.contextPath}/register">Register</a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="${pageContext.request.contextPath}/student/">StudentPortal</a>
-		<hr>
+		<jsp:include page="header.jsp"></jsp:include>
 		<h2>Home Page</h2>
 		<p>
 		${message} <br>
