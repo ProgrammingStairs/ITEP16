@@ -47,4 +47,9 @@ public class UserDaoImpl implements UserDao {
 	public User getUserById(int id) {
 		return em.find(User.class, id);
 	}
+	
+	@Override
+	public User updateUser(User user) {
+		return em.merge(user);
+	}
 }

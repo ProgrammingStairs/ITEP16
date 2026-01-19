@@ -117,9 +117,26 @@ public class UserController {
 	}
 	
 	@GetMapping("/updateUser/{id}")
-	public String updateUserForm(@PathVariable int id,Model model) {
+	public String updateUserForm(@PathVariable("id") int id,Model model) {
 		model.addAttribute("userObj", userService.getUserById(id));
 		return "updateForm";
+	}
+	
+	@PostMapping("/updateFormData")
+	public String updateFormData(@ModelAttribute User user,Model model) {
+		userService.updateUser(user);
+		model.addAttribute("userList", userService.getAllUsers());
+		model.addAttribute("message", "Data Updated Successfully");
+		return "viewUserList";
+	}
+	
+	@GetMapping("/logout")
+	public String logout(Model model,HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.setAttribute("email", null);
+		session.invalidate();
+		model.addAttribute("message", "Logout Successfull");
+		return "login";
 	}
 }
 

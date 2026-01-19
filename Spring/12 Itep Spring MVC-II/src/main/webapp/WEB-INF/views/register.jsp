@@ -14,7 +14,7 @@
 			var genderObj = document.querySelector("input[name='gender']:checked");
 			var gender = genderObj ? genderObj.value : "";
 			var hobbiesObj = document.querySelectorAll('input[name="hobbies"]:checked');
-			var hobbies = hobbiesObj ? [...hobbiesObj].map(hobby=>hobby.value).join(" , ") : "";
+			var hobbies = hobbiesObj ? [...hobbiesObj].map(hobby=>hobby.value).join(",") : "";
 			var subject = document.getElementById("subject").value;
 			
 			var obj = {username,email,password,gender,hobbies,subject};

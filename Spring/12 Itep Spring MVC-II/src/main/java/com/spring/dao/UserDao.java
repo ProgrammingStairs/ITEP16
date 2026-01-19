@@ -9,5 +9,6 @@ public interface UserDao {
 	public boolean checkLogin(String email,String password);
 	public boolean deleteUser(int id);
 	public User getUserById(int id);
+	public User updateUser(User user);
 	public List<User> getAllUserList();
 }
