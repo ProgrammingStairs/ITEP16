@@ -23,10 +23,6 @@ public class UserController {
 		this.userService=userService;
 	}
 	
-//	public UserController() {
-//		System.out.println("User controller test run");
-//	}
-	
 	@Autowired
 	public Environment env;
 	
@@ -42,20 +38,27 @@ public class UserController {
 	
 	@PostMapping("/uploadFormData")
 	public String uploadFormData(@ModelAttribute UserDto userDto,Model model) throws IOException {
-		MultipartFile file = userDto.getFilename();
+		MultipartFile[] file = userDto.getFilename();
 		String filePath = env.getProperty("upload.filepath");
 		File uploadPath = new File(filePath);
 		if(!uploadPath.exists())
 			uploadPath.mkdir();
 		
-		String fileName = System.currentTimeMillis()+file.getOriginalFilename();
-		File destination = new File(uploadPath,fileName);
-		file.transferTo(destination);
+		StringBuilder sb = new StringBuilder();
+		for(MultipartFile fileObj : file) {
+			String fileName = System.currentTimeMillis()+fileObj.getOriginalFilename();
+			File destination = new File(uploadPath,fileName);
+			fileObj.transferTo(destination);
+			sb.append(fileName).append(",");
+		}
+		
+		String str = sb.toString();
+		String fileNames = str.substring(0, str.length()-1);
 		
 		UserEntity userEntity = new UserEntity();
 		userEntity.setUsername(userDto.getUsername());
 		userEntity.setDescription(userDto.getDescription());
-		userEntity.setFilename(fileName);
+		userEntity.setFilename(fileNames);
 		
 		userService.addUser(userEntity);
 		model.addAttribute("message", "File Uploaded Successfully");

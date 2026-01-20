@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.spring</groupId>
-  <artifactId>13_itep_spring_single_file_upload</artifactId>
+  <artifactId>14_itep_spring_multiple_file_upload</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-      <dependencies>
+        <dependencies>
   <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
 <dependency>
     <groupId>jakarta.servlet</groupId>
