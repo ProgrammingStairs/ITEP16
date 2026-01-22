@@ -52,7 +52,7 @@ public class HibernateConfig {
 	}
 	
 	@Bean
-	public PlatformTransactionManager jpaTransactionManager(EntityManagerFactory emf) {
+	public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
 		return new JpaTransactionManager(emf);
 	}
 	

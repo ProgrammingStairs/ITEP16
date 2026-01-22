@@ -1,5 +1,7 @@
 package com.spring.entity;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,6 +25,18 @@ public class VerificationToken {
 	@OneToOne
 	@JoinColumn(name="user_id")
 	User user;
+	
+	@Column(name="date_time")
+	LocalDateTime localDateTime;
+	
+	public LocalDateTime getLocalDateTime() {
+		return localDateTime;
+	}
+
+	public void setLocalDateTime(LocalDateTime localDateTime) {
+		this.localDateTime = localDateTime;
+	}
+
 
 	public int getVid() {
 		return vid;

@@ -1,5 +1,6 @@
 package com.spring.service;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
@@ -25,6 +26,7 @@ public class VerificationTokenService {
 		String token = UUID.randomUUID().toString();
 		vt.setToken(token);
 		vt.setUser(user);
+		vt.setLocalDateTime(LocalDateTime.now().plusHours(24));
 		
 		verificationTokenRepository.save(vt);
 		return token;

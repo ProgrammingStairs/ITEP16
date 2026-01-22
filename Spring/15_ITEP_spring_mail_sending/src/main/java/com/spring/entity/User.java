@@ -20,7 +20,7 @@ public class User {
 	@Column(name="username")
 	private String username;
 	
-	@Column(name="email")
+	@Column(name="email",unique=true)
 	private String email;
 	
 	@Column(name="password")
@@ -29,8 +29,6 @@ public class User {
 	@Column(name="address")
 	private String address;
 	
-	@Column(name="date_time")
-	LocalDateTime localDateTime;
 	
 	@Column(name="status")
 	private boolean isEnabled = false;
@@ -81,16 +79,6 @@ public class User {
 
 	public void setEnabled(boolean isEnabled) {
 		this.isEnabled = isEnabled;
-	}
-
-	public LocalDateTime getLocalDateTime() {
-		return localDateTime;
-	}
-
-	public void setLocalDateTime(LocalDateTime localDateTime) {
-		this.localDateTime = localDateTime;
-	}
-	
-	
+	}	
 	
 }
