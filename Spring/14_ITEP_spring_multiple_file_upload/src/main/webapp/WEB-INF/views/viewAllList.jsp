@@ -1,4 +1,4 @@
-<%@page import="com.spring.entity.UserEntity"%>
+<%@page import="com.springboot.entity.UserEntity"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
