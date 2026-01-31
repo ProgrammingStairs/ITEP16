@@ -38,14 +38,20 @@ public class AppController {
 	public Student getStudDetails() {
 		return new Student(101, "Andrew Anderson", "andrew@gmail.com", "andrew@123", "Indore");
 	}
-	
-	@PostMapping("/getDetails")
+	// through form-data
+	@PostMapping("/setDetails")
 	public String getDetails(@RequestParam String email,
 			@RequestParam String password) {
 		return "EmailId : "+email+"<br>Password : "+password;
 	}
-	
-	@PostMapping("/getJSONDetails")
+// http://localhost:8080/setGetDetails?email=abc@gmail.com&password=indore
+	@GetMapping("/setGetDetails")
+	public String getDetail(@RequestParam String email,
+			@RequestParam String password) {
+		return "EmailId : "+email+"<br>Password : "+password;
+	}
+
+	@PostMapping("/setJSONDetails")
 	public String getJsonDetails(@RequestBody Student stud) {
 		return "EmailId : "+stud.getEmail()+"<br>Password : "+stud.getPassword();
 	}
@@ -61,7 +67,7 @@ public class AppController {
 	}
 
 	@GetMapping("/showData/{email}/{address}")
-	public String showDetails(@PathVariable String email,String address) {
+	public String showDetails(@PathVariable String email,@PathVariable String address) {
 		return "Student Email : "+email+"<br>Student Address : "+address;
 	}
 }
