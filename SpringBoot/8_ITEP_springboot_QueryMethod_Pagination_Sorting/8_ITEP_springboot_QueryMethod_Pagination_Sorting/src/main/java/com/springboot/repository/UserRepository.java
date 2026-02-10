@@ -2,7 +2,11 @@ package com.springboot.repository;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.springboot.entity.User;
 
@@ -33,6 +37,18 @@ public interface UserRepository extends JpaRepository<User,Integer> {
 	 List<User> findByUsernameIgnoreCase(String username);
 	 List<User> findByUsernameContainingIgnoreCase(String username);
 	 
+	 List<User> findByAddressIn(List<String> address);
+	 List<User> findByGenderOrderByAddressAsc(String gender);
+	 Page<User> findByGender(String gender,Pageable pageable);
+	 
+	 List<User> searchByAddress(@Param("address") String address);
+	 List<User> searchByGender(@Param("gender") String gender);
+
+	 @Query("select u from User u JOIN u.hobbies h where h=:hobby")
+	 List<User> searchByHobby(@Param("hobby") String hobby);
+	 
+	 @Query(value="select * from user_qm where address = :address",nativeQuery = true)
+	 List<User> searchByAddressAgain(@Param("address") String address);
 	 
 }
 

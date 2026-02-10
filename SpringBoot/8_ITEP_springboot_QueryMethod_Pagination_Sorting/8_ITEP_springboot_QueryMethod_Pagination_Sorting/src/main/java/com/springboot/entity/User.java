@@ -10,7 +10,20 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.NamedNativeQuery;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
+
+@NamedQuery(
+	name="User.searchByAddress",
+	query="select u from User u where u.address = :address"
+)
+
+@NamedNativeQuery(
+	name="User.searchByGender",
+	query="select * from user_qm where  gender = :gender",
+	resultClass = User.class
+)
 
 @Entity
 @Table(name="user_qm")
