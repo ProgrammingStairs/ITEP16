@@ -16,7 +16,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="user")
+@Table(name="user_security")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -38,5 +38,5 @@ public class User {
 			joinColumns = @JoinColumn(name="uid"),
 			inverseJoinColumns = @JoinColumn(name="rid")
 	)
-	List<String> role;
+	List<Role> role;
 }

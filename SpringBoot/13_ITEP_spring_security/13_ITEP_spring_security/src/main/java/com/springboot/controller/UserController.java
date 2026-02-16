@@ -1,5 +1,21 @@
 package com.springboot.controller;
 
-public class UserController {
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
+@RequestMapping("/user")
+public class UserController {
+	
+	@GetMapping("/")
+	public String user() {
+		return "Welcome to User Panel";
+	}
+
+	@GetMapping("/home")
+	public String userHome() {
+		return "Welcome to User Home";
+	}
 }
+
