@@ -14,6 +14,8 @@ public class OrderService {
 	}
 	public User getUser(int pid) {
 		Product pobj = restTemplate.getForObject("http://localhost:8082/findProductById/"+pid, Product.class);
-		
+		int uid = pobj.getUid();
+		User uObj = restTemplate.getForObject("http://localhost:8081/findUserById/"+uid, User.class);
+		return uObj;
 	}
 }
