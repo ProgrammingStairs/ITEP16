@@ -1,0 +1,1 @@
+document.writeln("This is an example of javascript");
