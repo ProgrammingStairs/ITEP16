@@ -1,0 +1,11 @@
+<!-- while loop | reversing number -->
+<script>
+    var num = 289;
+    var rev=0,rem;
+    while(num>0){
+        rem = num%10;
+        rev = rev * 10 + rem;
+        num = parseInt(num/10);
+    }    
+    document.write("Reverse number : "+rev);
+</script>

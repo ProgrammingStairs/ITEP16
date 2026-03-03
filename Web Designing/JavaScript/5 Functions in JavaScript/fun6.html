@@ -1,0 +1,40 @@
+<script>
+    //  function expression | variable function | Anonymous function
+    
+    // var add = function(){
+    //     var num1 = prompt("Enter first number")*1;
+    //     var num2 = prompt("Enter second number")*1;
+    //     document.write("Sum : "+(num1+num2));
+    // }
+    // add();
+
+    // lambda expression | arrow function | fat arrow function
+
+    // var add = ()=>{
+    //     var num1 = prompt("Enter first number")*1;
+    //     var num2 = prompt("Enter second number")*1;
+    //     document.write("Sum : "+(num1+num2));
+    // }
+    // add();
+
+    // immediately invoked function expression
+
+    // var res = (function(){
+    //     var num1 = prompt("Enter first number")*1;
+    //     var num2 = prompt("Enter second number")*1;
+    //     document.write("Sum : "+(num1+num2));
+    //     return num1+num2;
+    // })();
+    // document.write("<br>Result : "+res);
+
+    // immediately invoked lambda expression
+
+    var res = (()=>{
+        var num1 = prompt("Enter first number")*1;
+        var num2 = prompt("Enter second number")*1;
+        document.write("Sum : "+(num1+num2));
+        return num1+num2;
+    })();
+    document.write("<br>Result : "+res);
+
+</script>

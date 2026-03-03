@@ -1,0 +1,25 @@
+<!-- categories of function
+        1. No argument No return type 
+        2. No argument with return type 
+        3. With argument no return type 
+        4. With argument with return type
+
+    Note : 
+        fun calling ----- calling function
+        fun definition -- called function
+-->
+
+<script>
+    // no argument no return type
+    function printSeries(){
+        var num = parseInt(prompt("Enter number : "));
+        var a = -1, b = 1, c;
+        for(var i=1;i<=num;i++){
+            c = a + b;
+            document.write("  "+c);
+            a = b;
+            b = c;
+        }
+    }
+    printSeries();
+</script>

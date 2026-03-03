@@ -1,0 +1,23 @@
+<!-- categories of function
+        1. No argument No return type 
+        2. No argument with return type 
+        3. With argument no return type 
+        4. With argument with return type
+
+    Note : 
+        fun calling ----- calling function
+        fun definition -- called function
+-->
+
+<script>
+    // no argument with return type
+    function printFactorial(){
+        var num = parseInt(prompt("Enter number : "));
+        var fact = 1;
+        for(var i=1;i<=num;i++){
+            fact = fact * i;
+        }
+        return fact;
+    }
+            document.write("Factorial : "+printFactorial());
+</script>

@@ -1,0 +1,22 @@
+<!-- 
+    Javascript Popup's 
+    -- alert
+    -- confirm
+    -- prompt
+-->
+    <script>
+        // var res = prompt("Enter Name");
+        // document.write("Welcome ",res);
+
+        // var res = prompt("Enter Name","John Deo");
+        // document.write("Welcome ",res);
+
+        var res = prompt("Enter Number");
+        if(isNaN(res))
+            alert("Please enter valid number");
+        else{
+            for(var i=1;i<=10;i++){
+                document.write("<br>"+res+" x "+i+" = "+(res*i));
+            }
+        }
+    </script>

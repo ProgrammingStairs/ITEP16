@@ -1,0 +1,13 @@
+<!-- for loop | number is perfect or not -->
+<script>
+    var num = 28;
+    var sum = 0;
+    for(var i=1;i<=num/2;i++){
+        if(num%i==0)
+            sum = sum + i;
+    }
+    if(sum==num)
+        document.write("Number is perfect");
+    else 
+        document.write("Number is not perfect");
+</script>

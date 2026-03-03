@@ -1,0 +1,20 @@
+<!-- example showing the concept of array -->
+ <script>
+    var arr = [12,23,43,322,34,45]
+    document.write("<br>Array elements are : ");
+    arr.map((element)=>{
+        document.write(element+"&nbsp;&nbsp;&nbsp;");
+    });
+
+    document.write("<br>Array elements are : ");
+    var res = arr.map((element)=>{
+        // document.write(element+"&nbsp;&nbsp;&nbsp;");
+        // return element>30 ? element : false;
+        return element>30;
+    });
+    // document.write("<br>Resultant array : "+typeof res);
+    document.write("<br>Resultant array : "+res);
+
+document.write("<br>"+(res==res));
+document.write("<br>"+(res==arr));
+</script>

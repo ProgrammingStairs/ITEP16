@@ -1,0 +1,15 @@
+<!-- example showing the concept of array -->
+ <script>
+    var arr = [12,23,43,322,34,45]
+    document.write("<br>Array elements are : ");
+    arr.find((element)=>{
+        document.write(element+"&nbsp;&nbsp;&nbsp;");
+    });
+
+    var res = arr.find((element)=>{
+        return element>30;
+    });
+    // document.write("<br>Resultant array : "+typeof res);
+    document.write("<br>Resultant array : "+res);
+
+</script>

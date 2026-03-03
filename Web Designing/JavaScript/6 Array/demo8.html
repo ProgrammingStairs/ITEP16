@@ -1,0 +1,19 @@
+<!-- example showing the concept of array -->
+ <script>
+    var arr = [12,23,43,322,34,45]
+    // document.write("<br>Array elements are : ");
+    // var res1 = arr.some((element,index)=>{
+    //     document.write("<br>  index : "+index);
+    //     return element>30;
+    // });
+    // document.write("<br>Result : "+res1);
+    
+    document.write("<br>Array elements are : ");
+    var res1 = arr.every((element,index)=>{
+        document.write("<br>  index : "+index);
+        // return element>3;
+        return element>30;
+    });
+    document.write("<br>Result : "+res1);
+    
+</script>

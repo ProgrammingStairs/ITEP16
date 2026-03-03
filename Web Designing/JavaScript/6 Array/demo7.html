@@ -1,0 +1,18 @@
+<!-- example showing the concept of array -->
+ <script>
+    var arr = [12,23,43,322,34,45]
+    document.write("<br>Array elements are : ");
+    var res1 = arr.reduce((a,b)=>{
+        document.write("<br>  a : "+a+" b : "+b);
+        return a+b;
+    },0);
+    document.write("<br>Result : "+res1);
+    
+    document.write("<br><br>Array elements are : ");
+    var res2 = arr.reduce((a,b)=>{
+        document.write("<br>  a : "+a+" b : "+b);
+        return a+b;
+    });
+    document.write("<br>Result : "+res2);
+
+</script>

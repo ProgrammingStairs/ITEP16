@@ -1,0 +1,25 @@
+<!-- example showing the concept of array -->
+ <script>
+    var arr = [12,23,43,322,34,45]
+    document.write("<br>Array elements are : ");
+    for(var index in arr)
+        document.write("<br>index : "+index+" element : "+arr[index]);
+
+    document.write("<br>Array elements are : ");
+    for(var value of arr)
+        document.write("<br>value : "+value);
+
+    var arr = [12,2.3,true,"Hello",'d',-45]
+    document.write("<br>Array elements are : ");
+    for(var index in arr)
+        document.write("<br>index : "+index+" element : "+arr[index]);
+
+    var arr = [
+                function(){return "hello"},
+                function(){return " andrew"}
+            ]
+    document.write("<br>Array elements are : ");
+    for(var index in arr)
+        document.write(arr[index]());
+
+</script>

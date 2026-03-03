@@ -1,0 +1,30 @@
+<!-- categories of function
+        1. No argument No return type 
+        2. No argument with return type 
+        3. With argument no return type 
+        4. With argument with return type
+
+    Note : 
+        fun calling ----- calling function
+        fun definition -- called function
+-->
+
+<script>
+    // with argument with return type
+    var num = parseInt(prompt("Enter number : "));
+    function printPrime(num){
+        for(var i=2;i<=num/2;i++){
+            if(num%i==0)
+                break;
+        }   
+        if(i>num/2 && num>1)
+            return true;
+        else
+            return false;
+    } 
+    var res = printPrime(num);
+    if(res)
+        document.write("Prime Number");
+    else 
+        document.write("Not a prime number");
+</script>
