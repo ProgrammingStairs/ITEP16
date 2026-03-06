@@ -1,0 +1,24 @@
+<!-- example showing the concept of array -->
+ <script>
+    var arr = [12,23,43,322,34,45]
+    document.write("<br>Array elements are : "+arr);    
+
+    arr.splice(2,1);
+    document.write("<br>splice : "+arr);
+
+    arr.splice(1,2);
+    document.write("<br>splice : "+arr);
+
+    arr.splice(1,0,2000,300);
+    document.write("<br>splice : "+arr);
+
+    arr.splice(2,1,2000,300);
+    document.write("<br>splice : "+arr);
+
+    // var res = arr.join();
+    // var res = arr.join("");
+    // var res = arr.join(" ");
+    var res = arr.join("-");
+    document.write("<br>join : "+res);
+
+</script>

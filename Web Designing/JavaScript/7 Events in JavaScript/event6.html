@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: red;
+            margin: 10px;
+            padding: 20px;
+        }
+        h1{
+            background-color: olive;
+        }
+        p{
+            background-color: orange;
+            margin: 40px;
+        }
+    </style>
+    <script>
+        function enter(){
+            document.getElementById("enter").innerHTML++;
+        }
+        function move(){
+            document.getElementById("move").innerHTML++;
+        }
+        function over(){
+            document.getElementById("over").innerHTML++;
+        }
+    </script>
+</head>
+<body>
+    <div onmouseenter="enter()">
+        <h1>MouseEnter : <span id="enter">0</span></h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quia tempora temporibus cum excepturi minima velit fuga, architecto impedit, ab ipsam reiciendis sed saepe pariatur quam eligendi explicabo eius natus doloremque facere? Temporibus unde, vero perferendis iusto fuga voluptates nihil?</p>
+    </div>
+    <div onmousemove="move()">
+        <h1>MouseMove : <span id="move">0</span></h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quia tempora temporibus cum excepturi minima velit fuga, architecto impedit, ab ipsam reiciendis sed saepe pariatur quam eligendi explicabo eius natus doloremque facere? Temporibus unde, vero perferendis iusto fuga voluptates nihil?</p>
+    </div>
+    <div onmouseover="over()">
+        <h1>MouseOver : <span id="over">0</span></h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quia tempora temporibus cum excepturi minima velit fuga, architecto impedit, ab ipsam reiciendis sed saepe pariatur quam eligendi explicabo eius natus doloremque facere? Temporibus unde, vero perferendis iusto fuga voluptates nihil?</p>
+    </div>
+
+</body>
+</html>

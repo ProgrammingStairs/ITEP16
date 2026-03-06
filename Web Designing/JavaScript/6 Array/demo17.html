@@ -1,0 +1,20 @@
+<!-- example showing the concept of array -->
+<script>
+    var arr = [];
+    var rows = parseInt(prompt("Enter rows : "));
+    var cols = parseInt(prompt("Enter cols : "));
+    
+    for(var i=0;i<rows;i++){
+        arr[i] = [];
+        for(var j=0;j<cols;j++){
+            arr[i][j] = parseInt(prompt("Enter elements : "));
+        }
+    }
+    document.write("<br>Array elements are : <br>");
+    for(var i=0;i<rows;i++){
+        for(var j=0;j<cols;j++){
+            document.write(arr[i][j]+"&nbsp;&nbsp;&nbsp;");
+        }
+        document.write("<br>");
+    }
+</script>

@@ -1,0 +1,17 @@
+<!-- example showing the concept of array -->
+<script>
+    var arr = [];
+    var size = prompt("Enter Size");
+
+    alert("Enter Array elements : ");
+    for(var i=0;i<size;i++){
+        arr[i] = prompt("Enter "+(i+1)+" Element : ");
+    }
+    var min = arr[0];
+    for(var i=0;i<size;i++){
+        if(arr[i]<min)
+            min = arr[i];
+    }
+
+    document.write("<br>Minimum element is : "+min);
+</script>

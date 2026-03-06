@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function move(){
+            var move = document.getElementById("move");
+            move.style.color="red";
+        }
+        function enter(){
+            var enter = document.getElementById("enter");
+            enter.style.backgroundColor="red";
+        }
+        function over(){
+            var over = document.getElementById("over");
+            over.style.textDecoration="line-through";
+        }
+        function leave(){
+            var leave = document.getElementById("leave");
+            leave.style.textTransform="uppercase";
+        }
+        function up(){
+            var up = document.getElementById("up");
+            up.style.fontSize="25px";
+        }
+        function down(){
+            var down = document.getElementById("down");
+            down.style.color="white";
+            down.style.backgroundColor="olive";
+        }
+
+    </script>
+</head>
+<body>
+    <span onmousemove="move()" id="move">Lorem ipsum dolor sit amet.</span><br>
+    <span onmouseenter="enter()" id="enter">Lorem ipsum dolor sit amet.</span><br>
+    <span onmouseover="over()" id="over">Lorem ipsum dolor sit amet.</span><br>
+    <span onmouseleave="leave()" id="leave">Lorem ipsum dolor sit amet.</span><br>
+    <span onmouseup="up()" id="up">Lorem ipsum dolor sit amet.</span><br>
+    <span onmousedown="down()" id="down">Lorem ipsum dolor sit amet.</span><br>
+   
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!-- example showing the concept of array -->
+<script>
+    var arr = [];
+    var size = prompt("Enter Size");
+
+    alert("Enter Array elements : ");
+    for(var i=0;i<size;i++){
+        arr[i] = parseInt(prompt("Enter "+(i+1)+" Element : "));
+    }
+    var temp;
+    document.write("<br>Array elements are : ",arr);
+    for(var i=0;i<size;i++){
+        for(var j=i+1;j<size;j++){
+            if(arr[i]>arr[j]){
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    document.write("<br>Array elements in ascending order : ",arr);
+</script>

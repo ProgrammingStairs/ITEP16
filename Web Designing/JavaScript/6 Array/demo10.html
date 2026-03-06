@@ -1,0 +1,28 @@
+<!-- example showing the concept of array -->
+ <script>
+    var arr = [12,23,43,322,34,45]
+    document.write("<br>Array elements are : "+arr);    
+
+    document.write("<br>Array elements are : "+arr.sort((a,b)=>{
+        return a-b;
+    }));    
+
+    document.write("<br>Array elements are : "+arr.sort((a,b)=>{
+        return b-a;
+    }));    
+
+    document.write("<br>Minimum element : "+Math.min(...arr));    
+    document.write("<br>Maximum element : "+Math.max(...arr));    
+
+    document.write("<br>Minimum element : "+Math.min(12,23,43,322,34,45));    
+    document.write("<br>Maximum element : "+Math.max(12,23,43,322,34,45));    
+
+    document.write("<br>Minimum element : "+Math.min.apply(null,arr));    
+    document.write("<br>Maximum element : "+Math.max.apply(null,arr));    
+
+    document.write("<br>slice : "+arr.slice(2));    
+    document.write("<br>slice : "+arr.slice(2,5));    
+    document.write("<br>slice : "+arr.slice(-2));    
+    document.write("<br>slice : "+arr.slice(-5,-2));    
+
+</script>
