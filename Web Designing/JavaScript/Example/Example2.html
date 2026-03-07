@@ -1,0 +1,17 @@
+<!-- example showing the concept of callback -->
+<script>
+    function myFun(a,b,callback){
+        console.log("Original function executes..");
+        callback(a+b);   
+    }
+    var fun = function(res){
+        console.log("Callback Function executes : "+res);
+    }
+    myFun(23,34,fun);
+</script>
+<!-- 
+callback = function(){
+        console.log("Callback Function executes");
+    }
+
+    callback(); -->

@@ -1,0 +1,22 @@
+<!-- concept of promise chaining -->
+
+<script>
+    function checkNum(num){
+        return new Promise((resolve,reject)=>{
+            (num>2 && num<10) ? resolve(num) : reject(num);
+        });
+    }
+    var obj = checkNum(3);
+    obj.then((num)=>{
+        return num+num;
+    }).then((value)=>{
+        console.log("value inside then : "+value);
+    }).catch((value)=>{
+        console.log("executes");
+        return value*value;
+    }).then((result)=>{
+        console.log("catch result : "+result);
+    }).catch((res)=>{
+        console.log("catch : "+res);
+    });
+</script>

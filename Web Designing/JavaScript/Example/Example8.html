@@ -1,0 +1,19 @@
+<!-- closure -->
+
+<script>
+    function outerFunction(){
+        var num = 100;
+        return function innerFunction(num1){
+            return num*num1;
+        }
+    }
+    var inner = outerFunction();
+    console.log("Result : "+inner(200));
+</script>
+
+<!-- 
+inner = function innerFunction(num1){
+            return num*num1;
+}
+inner(200);
+-->

@@ -1,0 +1,22 @@
+<!-- example showing the concept of callback hell -->
+<script>
+    var num = 10;
+    function myFun(callback){
+        callback(num,(num,callback)=>{
+            console.log("num : "+num);
+            callback(num+2,(num,callback)=>{
+                console.log("num : "+num);
+                callback();
+            });
+        });
+    }
+    myFun((num,callback)=>{
+        console.log("num : "+num);
+        callback(num+2,(num,callback)=>{
+            console.log("num : "+num);
+            callback(num+2,()=>{
+                console.log("The End");
+            });
+        });
+    });
+</script>

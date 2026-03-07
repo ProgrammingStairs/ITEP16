@@ -1,0 +1,27 @@
+<!-- currying -->
+
+<script>
+    // closure
+    function add(a){
+        return (b)=>{
+            return (c)=>{
+                return a+b+c;
+            }
+        };
+    }
+    var res = add(2);
+    var data = res(3);
+    console.log(data(37));
+
+// currying
+    function add(a){
+        return (b)=>{
+            return (c)=>{
+                return a+b+c;
+            }
+        };
+    }
+    console.log(add(2)(3)(37));
+
+</script>
+

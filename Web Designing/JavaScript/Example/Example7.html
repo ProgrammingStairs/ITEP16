@@ -1,0 +1,18 @@
+<!-- concept of promise -->
+
+<script>
+    function checkNum(num){
+        return new Promise((resolve,reject)=>{
+            (num%2==0) ? resolve("Even Number") : reject(new Error("Odd Number"));
+        });
+    }
+    async function demoFun(){
+        try{
+            var res = await checkNum(45);
+            console.log("Result : "+res);
+        }catch(error){
+            console.log("Error : ",error);
+        }
+    }
+    demoFun();
+</script>
