@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #section{
+            height: 200px;
+            width: 100%;
+            border-style: solid;
+        }
+    </style>
+    <script>
+        function setColor(){
+            var section = document.getElementById("section");
+            var colorObj = document.getElementById("color");
+            var color = colorObj.value;
+            section.style.backgroundColor=color;
+        }
+    </script>
+</head>
+<body>
+    <div id="section"></div>
+    <select name="color" id="color" onchange="setColor()">
+        <option value="">Select Color</option>
+        <option value="red">Red</option>
+        <option value="crimson">Crimson</option>
+        <option value="olive">Olive</option>
+        <option value="dodgerblue">DodgerBlue</option>
+        <option value="transparent">Transparent</option>
+    </select>
+</body>
+</html>

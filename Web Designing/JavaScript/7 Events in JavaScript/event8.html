@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFun(){
+    //  alert("Registeration Successfull");
+        return false;    
+    }
+    function foc(){
+        var txt = document.getElementById("txt");
+        txt.style.backgroundColor="wheat";
+        txt.style.color="orange";
+    }
+    function blr(){
+        var txt = document.getElementById("txt");
+        txt.style.backgroundColor="darkslategrey";
+        txt.style.color="white";
+    }
+    </script>
+</head>
+<body>
+    <form action="welcome.html" onsubmit="return myFun()">
+        <input type="text" id="txt" placeholder="Enter Text" onfocus="foc()" onblur="blr()">
+        <button>Register</button>
+    </form>
+</body>
+</html>

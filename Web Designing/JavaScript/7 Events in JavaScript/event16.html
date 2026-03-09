@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer{
+            height: 600px;
+            margin: auto;
+            border-style: solid;
+            width: 80%;
+        }
+        #upper{
+            height: 400px;
+            width: 98%;
+            margin: auto;
+            /* border-style: solid; */
+        }
+        #big{
+            height: 400px;
+            width: 100%;
+        }
+        .lower{
+            height: 160px;
+            width: 234px;
+            float: left;
+            margin-left: 10px;
+            /* border-style: solid; */
+        }
+        #small{
+            height: 160px;
+            width: 234px;
+        }
+    </style>
+    <script>
+        function swapImage(smallObj){
+            var bigObj = document.getElementById("big");
+
+            var temp = bigObj.src;
+            bigObj.src = smallObj.src;
+            smallObj.src = temp;
+        }
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <div id="upper">
+            <img src="img1.jpg" id="big" alt="">
+        </div>
+        <hr>
+        <div class="lower">
+            <img src="img2.webp" id="small" onclick="swapImage(this)" alt="">
+        </div>
+        <div class="lower">
+            <img src="img3.jpg" id="small" onclick="swapImage(this)" alt="">
+        </div>
+        <div class="lower">
+            <img src="img4.jpg" id="small" onclick="swapImage(this)" alt="">
+        </div>
+        <div class="lower">
+            <img src="img5.webp" id="small" onclick="swapImage(this)" alt="">
+        </div>
+    </div>
+</body>
+</html>
