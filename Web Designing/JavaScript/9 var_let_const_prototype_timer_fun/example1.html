@@ -1,0 +1,32 @@
+<script>
+/*
+var declarations are hoisted and initialized with undefined.
+let and const declarations are hoisted but not initialized, leading to the TDZ.
+
+https://www.geeksforgeeks.org/javascript/temporal-dead-zone-in-javascript/
+*/ 
+// var is function scopic es5
+    var a = 100;
+    console.log("a : "+a);
+
+    a = 200;
+    console.log("a : "+a);
+
+    // creates block
+    {
+        console.log("inside block a : "+a);
+        var a = 300;
+        console.log("inside block a : "+a);
+    }
+
+    console.log("outside block a : "+a);
+
+    function show(){
+        console.log("inside function a : "+a);
+        var a = 400;
+        console.log("inside function a : "+a);
+    }
+    show();
+    console.log("outside function a : "+a);
+
+</script>

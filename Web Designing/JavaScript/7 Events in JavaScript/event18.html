@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show(){
+            var inputArray = document.getElementsByTagName("input");
+            var item='';
+            for(var i=0;i<inputArray.length;i++){
+                if(inputArray[i].checked)
+                    item += inputArray[i].value+" ";
+            }
+            alert("You Select : "+(item ? item : "No item selected"));  
+        }
+    </script>
+</head>
+<body>
+    <h2>JavaScript Example</h2>
+    <input type="checkbox" id="juice" name="juice" value="Juice">Juice <br>
+    <input type="checkbox" id="chocolate" name="chocolate" value="Chocolate">Chocolate <br>
+    <input type="checkbox" id="water" name="water" value="Water">Water <br>
+    <input type="checkbox" id="milk" name="milk" value="Milk">Milk <br>
+    <input type="checkbox" id="coffee" name="coffee" value="Coffee">Coffee <br>
+    <input type="checkbox" id="curd" name="curd" value="Curd">Curd <br>
+    <button onclick="show()">Select</button>
+</body>
+</html>

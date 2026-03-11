@@ -1,0 +1,26 @@
+<script>
+    // let is block scopic es6
+    let a = 100;
+    console.log("a : "+a);
+
+    a = 200;
+    console.log("a : "+a);
+
+    // creates block
+    {
+         console.log("inside block a : "+a);
+        let a = 300;
+        console.log("inside block a : "+a);
+    }
+
+     console.log("outside block a : "+a);
+
+    function show(){
+        console.log("inside function a : "+a);
+        let a = 400;
+        console.log("inside function a : "+a);
+    }
+    show();
+    console.log("outside function a : "+a);
+
+</script>
