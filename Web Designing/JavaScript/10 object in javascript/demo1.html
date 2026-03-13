@@ -1,0 +1,50 @@
+<!-- 
+There are two ways to represent object in javascript : 
+a. by object literal
+    var obj = {}
+    typeof obj is object
+
+    here {} contains values in terms of key value pair, like 
+    {
+        key : value 
+        |      |
+    }
+    ex : 
+    {
+        name : "Andrew Anderson",
+        age : 56
+    }    
+
+b. by Object constructor
+   var obj = new Object();
+   obj.name = "Andrew Anderson";
+   obj.age = 34; 
+
+-->
+<script>
+    // by object literal
+
+    // var obj = {}
+    // console.log("typeof obj : "+typeof obj);
+
+    var obj = {
+        name : "Andrew Anderson",
+        age : 45,
+        address : "Indore, Madhya Pradesh"
+    }
+    console.log("Name : "+obj.name);
+    console.log("Age : "+obj.age);
+    console.log("Address : "+obj.address);
+    
+    // by Object Constructor
+
+    var obj1 = new Object();
+    obj1.name = "Peter Parker";
+    obj1.age = 56;
+    obj1.address = "Indore, Madhya pradesh";
+
+    console.log("\nName : "+obj1.name);
+    console.log("Age : "+obj1.age);
+    console.log("Address : "+obj1.address);
+    
+</script>

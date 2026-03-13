@@ -1,0 +1,28 @@
+<script>
+    var arr = [{
+        name : "Andrew Anderson",
+        age : 45,
+        address : "Indore, Madhya Pradesh"
+    },{
+        name : "Peter Parker",
+        age : 34,
+        address : "Bhopal, Madhya Pradesh"
+    },{
+        name : "Jack Jackson",
+        age : 28,
+        address : "Ujjain, Madhya Pradesh"
+    }];
+
+    var table = `<table border='1' cellspacing='0'><tr><th>S.No</th><th>Name</th><th>Age</th><th>Address</th></tr>`
+    for(var i=0;i<arr.length;i++){
+        table+=`<tr>
+            <td>${i+1}</td>
+            <td>${arr[i].name}</td>
+            <td>${arr[i].age}</td>
+            <td>${arr[i].address}</td>    
+        </tr>`;
+    }
+    table+=`</table>`;
+
+    document.write(table);
+</script>

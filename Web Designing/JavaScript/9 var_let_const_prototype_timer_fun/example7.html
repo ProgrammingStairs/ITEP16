@@ -1,0 +1,22 @@
+<script>
+    function Employee(){
+        this.name = "Peter Parker",
+        this.age = 45,
+        this.pincode = 452010
+        this.isAdmin = false;
+        this.showData = function(){
+            console.log("Name : "+this.name);
+            console.log("Age : "+this.age);
+            console.log("Pincode : "+this.pincode);
+            console.log("Address : "+this.address);         
+        }
+    }
+    Employee.prototype.address = "Indore, Madhya Pradesh";
+    Employee.prototype.greet = function(){
+        console.log("### Welcome Employee ###");
+        console.log("Admin Status : ",this.isAdmin);
+    }
+    const emp = new Employee();
+    emp.greet();
+    emp.showData();
+</script>

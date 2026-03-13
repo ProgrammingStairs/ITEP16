@@ -1,0 +1,17 @@
+<!-- Asynchronous -->
+<script>
+    function gotoroom(){
+        console.log("gotoroom");
+    }
+    function removegarbage(name,a,b){
+        console.log("removegarbage : "+name+"\na : "+a+"\nb : "+b);
+    }
+    function wonprize(){
+        console.log("wonprize");
+    }
+    setTimeout(()=>{
+        gotoroom();
+    },2000); 
+    setTimeout(removegarbage,1000,"Peter Parker",1000,2000);
+    setTimeout(wonprize,500);
+</script>

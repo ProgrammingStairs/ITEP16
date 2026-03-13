@@ -1,0 +1,26 @@
+<script>
+    function Bank(){
+        this.balance = 1000000;
+        this.actNo = 'SBO123332';
+        this.actHolder = 'Andrew Anderson'
+    }
+    Bank.prototype.showDetails = function(){
+        console.log("Account Holder Name : "+this.actHolder);
+        console.log("Account Number : "+this.actNo);
+        console.log("Balance : "+this.balance);
+    }
+    Bank.prototype.withdraw = function(wamt){
+        console.log("\nRequest for Withdrawing amount : "+wamt);
+        this.balance -= wamt;
+    }
+    Bank.prototype.deposit = function(damt){
+        console.log("\nMake Payment to deposit amount : "+damt);
+        this.balance += damt;
+    }
+    const bank = new Bank();
+    bank.showDetails();
+    bank.withdraw(450000);
+    bank.deposit(175000);
+    console.log("Final Balance : ",bank.balance);
+        
+</script>

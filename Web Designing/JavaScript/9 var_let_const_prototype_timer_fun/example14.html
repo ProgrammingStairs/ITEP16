@@ -1,0 +1,28 @@
+<!-- Asynchronous -->
+<script>
+    function gotoroom(){
+        console.log("gotoroom");
+    }
+    function removegarbage(){
+        console.log("removegarbage");
+    }
+    function wonprize(){
+        console.log("wonprize");
+    }
+    // setTimeout(gotoroom,2000); 
+    // setTimeout(removegarbage,1000);
+    // setTimeout(wonprize,500);
+
+    // setInterval(gotoroom,2000); 
+    // setInterval(removegarbage,1000);
+    // setInterval(wonprize,500);
+
+    const x = setInterval(gotoroom,2000); 
+    const y = setInterval(removegarbage,1000);
+    const z = setInterval(wonprize,500);
+
+    clearInterval(x);
+    // clearInterval(y);
+    clearInterval(z);
+    
+</script>
