@@ -1,3 +1,5 @@
+// search  :  " jakarta persistance 3.0 " for persistence file xml annotation
+// download pdf pg. 414
 package com.jpa.entity;
 
 import jakarta.persistence.Column;

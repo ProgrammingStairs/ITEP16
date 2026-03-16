@@ -1,0 +1,31 @@
+<script>
+    // freeze
+    var obj = {
+        name:"Andrew Anderson",
+        age : 45,
+        address : "Indore , Madhya Pradesh",
+    }     
+    document.write("<br>isFrozen : "+Object.isFrozen(obj));
+    document.write("<br>name : "+obj.name);
+    document.write("<br>age : "+obj.age);
+    document.write("<br>address : "+obj.address);
+
+    Object.freeze(obj);
+    // document.write("<br>isFrozen : "+Object.freeze(obj));
+    // console.log("isFrozen : ",Object.freeze(obj));
+    document.write("<br>isFrozen : "+Object.isFrozen(obj));
+    obj.pincode = 452010;
+    delete obj.address;
+
+    document.write("<br>pincode : "+obj.pincode);
+    document.write("<br>address : "+obj.address);
+
+    obj.name = "Peter Parker";
+    document.write("<br>name : "+obj.name);
+
+
+    // document.write("<br><br>isSealed : "+Object.isSealed(obj));
+    // Object.seal(obj);
+    // document.write("<br>isSealed : "+Object.isSealed(obj));
+
+</script>

@@ -1,0 +1,16 @@
+<script>
+    function display(callback1,callback2){
+        document.write("<br>This is an example of display method");
+        callback1();
+        callback2();
+    }
+    var x = function(){
+        document.write("<br>This is an example of callback 1");
+    };
+    var y = function(){
+        document.write("<br>This is an example of callback 2");
+    };
+
+    display(x,y);
+
+</script>

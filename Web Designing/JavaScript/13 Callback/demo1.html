@@ -1,0 +1,19 @@
+<script>
+    /*
+    function display(data){
+        console.log("typeof data : "+typeof data);
+    }
+    var x = function(){};
+    display(x);
+    */
+
+    function display(callback){
+        document.write("<br>This is an example of display method");
+        callback();
+    }
+    var x = function(){
+        document.write("<br>This is an example of callback");
+    };
+    display(x);
+
+</script>

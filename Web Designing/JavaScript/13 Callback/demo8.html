@@ -1,0 +1,14 @@
+<script>
+    function gotoroom(callback){
+        document.write("<br>gotoroom");
+        callback(wonprize);
+    }
+    function removegarbage(callback){
+        document.write("<br>removegarbage");
+        callback();
+    }
+    function wonprize(){
+        document.write("<br>wonprize");
+    }
+    gotoroom(removegarbage);
+</script>

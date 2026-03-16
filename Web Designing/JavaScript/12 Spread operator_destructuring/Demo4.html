@@ -1,0 +1,25 @@
+<script>
+    // object destructuring 
+    function myFun(){
+        var obj = {
+            name:"Andrew Anderson",
+            age : 45,
+            address : {
+                city:"Indore",
+                state:"Madhya Pradesh",
+                toString(){
+                    return this.city+" , "+this.state;
+                }
+            }
+        }
+        return obj;
+    }
+
+    var {address,name:fullName,age,pincode=452010} = myFun();
+    document.write("<br>Name : "+fullName);
+    document.write("<br>Age : "+age);
+    document.write("<br>Address : "+address);
+    document.write("<br>City : "+address.city);
+    document.write("<br>State : "+address.state);
+    document.write("<br>Pincode : "+pincode);
+</script>

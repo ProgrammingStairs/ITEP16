@@ -1,0 +1,10 @@
+<script>
+    function myFun(callback){
+        var message = "Welcome Back";
+        document.write("Inside myFun");
+        callback(message); 
+    }
+    myFun(function(message){
+        document.write("<br>"+message);
+    });
+</script>

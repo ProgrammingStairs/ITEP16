@@ -1,0 +1,20 @@
+<script>
+    // object destructuring 
+    var obj = {
+        name:"Andrew Anderson",
+        age : 45,
+        address : "Indore Madhya Pradesh"
+    }
+
+    // var {name,age,address} = obj;
+    // document.write("<br>Name : "+name);
+    // document.write("<br>Age : "+age);
+    // document.write("<br>Address : "+address);
+
+    var {address,name:fullName,age,pincode=452010} = obj;
+    document.write("<br>Name : "+name);
+    document.write("<br>Name : "+fullName);
+    document.write("<br>Age : "+age);
+    document.write("<br>Address : "+address);
+    document.write("<br>Pincode : "+pincode);
+</script>

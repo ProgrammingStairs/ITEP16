@@ -1,0 +1,10 @@
+<script>
+    function myFun(callback){
+        document.write("<br>Loading....");
+        setTimeout(callback,4000);
+    }
+    var x = function(){
+        document.write("Email Sent..");
+    }
+    myFun(x);
+</script>
