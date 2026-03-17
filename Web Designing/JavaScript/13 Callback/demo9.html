@@ -1,0 +1,33 @@
+<!--  pyramid of doom | callback hell -->
+<script>
+    var a = parseInt(prompt("Enter value of a : "));
+    var b = parseInt(prompt("Enter value of b : "));
+    
+    function addition(a,b,callback){
+        document.write("<br>Addition function called");
+        document.write("<br>Addition : "+(a+b));
+        callback(false);
+    }
+    function subtraction(a,b,callback){
+        document.write("<br>Subtraction function called");
+        document.write("<br>Subtraction : "+(a-b));
+        callback(true);
+    }
+    function multiplication(a,b,callback){
+        document.write("<br>Multiplication function called");
+        document.write("<br>Multiplication : "+(a*b));
+        callback();
+    }
+    
+    addition(a,b,(value)=>{
+        if(!value){
+            subtraction(a,b,(value)=>{
+                if(value){
+                    multiplication(a,b,()=>{
+                        document.write("<br>End of Program");
+                    });                    
+                }
+            });
+        }
+    });
+</script>

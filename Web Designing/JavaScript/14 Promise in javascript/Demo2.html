@@ -1,0 +1,41 @@
+<!-- Example showing the concept of Promise -->
+<script>
+//     new Promise((resolve,reject)=>{
+// //        resolve("resolved called");
+//         reject("reject called");
+//     }).finally(()=>{
+//         document.write("finally executes<br>");
+//     }).then(function(resolveMessage){
+//         document.write(resolveMessage);
+//     }).catch(function(rejectReason){
+//         document.write(rejectReason);
+//     });
+
+    // new Promise((resolve,reject)=>{
+    //     resolve("resolved called");
+    //    //  reject("reject called");
+    // }).finally(()=>{
+    //     document.write("finally executes<br>");
+    // }).then(function(resolveMessage){
+    //     document.write(resolveMessage);
+    // });
+
+    // new Promise((resolve,reject)=>{
+    //     resolve("resolved called");
+    //     // reject("reject called");
+    // }).finally(()=>{
+    //     document.write("finally executes<br>");
+    // }).catch(function(rejectMessage){
+    //     document.write(rejectMessage);
+    // });
+
+    new Promise((resolve,reject)=>{
+        //resolve("resolved called");
+         reject("reject called");
+    }).then(function(resolveMessage){
+        document.write(resolveMessage);
+    }).finally(()=>{
+        document.write("finally executes<br>");
+    });
+
+</script>

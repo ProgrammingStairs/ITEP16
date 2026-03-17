@@ -1,0 +1,28 @@
+<!-- Example showing the concept of Promise -->
+<script>
+    function myFun(){
+        return new Promise((resolve,reject)=>{
+            var obj = {
+                name:"Andrew Anderson",
+                age:89,
+                address:"Indore, Madhya Pradesh"
+            }
+            setTimeout(()=>{
+                resolve(obj);
+            },4000);
+        });
+    }
+    var display = (receivedObj)=>{
+        console.log("Name : "+receivedObj.name);
+        console.log("Age : "+receivedObj.age);
+        console.log("Address : "+receivedObj.address);
+        console.log("Hobbies : "+receivedObj.hobbies);
+    }
+    var againSet = (obj)=>{
+        obj.hobbies = ["Cricket","Hockey","Chess"];
+        return obj;
+    }
+    myFun()
+        .then(againSet)
+            .then(display);
+</script>

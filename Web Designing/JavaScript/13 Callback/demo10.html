@@ -1,0 +1,23 @@
+<!--  pyramid of doom | callback hell -->
+<script>
+    var num=10;
+    function myFun(num,callback){
+        document.write("<br>num : "+num);
+        callback(num+2,(num,callback)=>{
+            document.write("<br>num : "+num);
+            callback(num+2,(num,callback)=>{
+                document.write("<br>num : "+num);
+                callback();
+            });
+        });
+    } 
+    myFun(num,(num,callback)=>{
+        document.write("<br>num : "+num);
+        callback(num+2,(num,callback)=>{
+            document.write("<br>num : "+num);
+            callback(num+2,()=>{
+                document.write("<br>End of program");
+            });
+        });
+    });
+</script>
