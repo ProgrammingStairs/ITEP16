@@ -1,0 +1,43 @@
+<script>
+    function myFun1(){  
+        return new Promise((resolve,reject)=>{
+            var obj = {
+                name:"Andrew Anderson",
+                age : 45,
+                address : {
+                    city : "Indore",
+                    state : "Madhya Pradesh",
+                    toString(){
+                        return this.city+" , "+this.state
+                    }
+                }
+            }
+            setTimeout(()=>{
+                resolve(obj);
+            },2000);
+        });
+    }
+    function myFun2(obj){
+        return new Promise((resolve,reject)=>{
+            obj.hobbies = ["Cricket","Football","Chess"];
+            obj.pincode = 452010;
+            resolve(obj);
+        });
+    }
+    async function myFun(){
+        try{
+            var obj = await myFun1();
+            var modifiedObj = await  myFun2(obj);
+            console.log(modifiedObj);
+            console.log("Name : "+modifiedObj.name);
+            console.log("Age : "+modifiedObj.age);
+            console.log("Address : "+modifiedObj.address);
+            console.log("Hobbies : "+modifiedObj.hobbies);
+            console.log("Pincode : "+modifiedObj.pincode);
+            
+        }catch(error){
+            console.log("Error : "+error);
+        }
+    }
+    myFun();
+</script>

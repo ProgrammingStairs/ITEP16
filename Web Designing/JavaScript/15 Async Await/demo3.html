@@ -1,0 +1,21 @@
+<script>
+    function myFun1(num){
+        return new Promise((resolve,reject)=>{
+            if(num>=50)
+                resolve(num*num);
+            else
+                reject(num-100);
+        });
+    }
+    var num = 5;
+    async function myFun(num){
+        try{
+            var value = await myFun1(num);
+            var res = await myFun1(value);
+            console.log("Result(then) :  "+res);
+        }catch(error){
+            console.log("Result(catch) : "+error);
+        }
+    }
+    myFun(num);
+</script>

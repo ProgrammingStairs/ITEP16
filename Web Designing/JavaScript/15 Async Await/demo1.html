@@ -1,0 +1,29 @@
+<script>
+    // async function myFun(){
+    //     return 1;
+    // } 
+    // console.log(myFun());
+
+    function checkNum(num){
+        return new Promise((resolve,reject)=>{
+            (num%2==0) ? resolve("Even Number") : reject("Odd Number");
+        }) 
+    }
+    function demo(){
+        console.log("demo executes");
+    }
+    console.log("before async");    
+    async function myFun(num){
+        try{
+            console.log("inside async before await");            
+            var str = await checkNum(num);
+            console.log("inside async after await");
+            console.log(str);
+        }catch(error){
+            console.log(error);
+        }
+    }
+    myFun(60);
+    console.log("after async");
+    setTimeout(demo,2000);
+</script>

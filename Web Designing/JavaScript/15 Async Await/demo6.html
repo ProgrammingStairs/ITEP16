@@ -1,0 +1,25 @@
+<button onclick="showData()">View Data</button>
+<p id="showData"></p>
+<script>
+    async function showData() {
+        try {
+            var response = await fetch("https://jsonplaceholder.typicode.com/posts");
+            var arr = await response.json();
+            var table = `<table border='1' cellspacing='0'><tr><th>S.No</th><th>UserId</th><th>Id</th><th>Title</th><th>Body</th></tr>`
+            for (var i = 0; i < arr.length; i++) {
+                table += `<tr>
+                        <td>${i + 1}</td>
+                        <td>${arr[i].userId}</td>
+                        <td>${arr[i].id}</td>
+                        <td>${arr[i].title}</td>
+                        <td>${arr[i].body}</td>    
+                    </tr>`;
+            }
+            table += `</table>`;
+            document.getElementById("showData").innerHTML = table;
+
+        } catch (error) {
+            console.log("Error : " + error);
+        }
+    }
+</script>

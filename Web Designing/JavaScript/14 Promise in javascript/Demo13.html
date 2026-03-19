@@ -1,0 +1,18 @@
+<!-- Example showing the concept of Promise -->
+<script>
+    var promiseObj = Promise.resolve(100);
+    promiseObj.then((value)=>{
+        console.log("Value : "+value);
+    }).catch((error)=>{
+        console.log("Error : "+error);
+    });
+
+    var promiseObj1 = Promise.reject(new Error("Internal server error"));
+    promiseObj1.then((value)=>{
+        console.log("Value : "+value);
+    }).catch((error)=>{
+        // console.log("Error : "+error);
+        console.log("Error : ",error);
+    });
+
+</script>

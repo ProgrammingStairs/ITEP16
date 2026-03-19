@@ -1,0 +1,33 @@
+<script>
+    // example showing the concept of Currying 
+    /*
+        function addition(a){
+            return function(b){
+                return (c)=>{
+                    return a+b+c;
+                }
+            };
+        }
+        var myFun = addition(5);
+        var newFun = myFun(6);
+        var res = newFun(7);
+        document.write("Addition : "+res);
+    */
+
+    /*
+       function addition(a){
+            return b => c => a+b+c;
+        }
+        var myFun = addition(50);
+        var newFun = myFun(6);
+        var res = newFun(7);
+        document.write("Addition : "+res);
+    */
+
+        var addition = a => b => c => a+b+c;
+        var myFun = addition(50);
+        var newFun = myFun(6);
+        var res = newFun(7);
+        document.write("Addition : "+res);
+ 
+</script>

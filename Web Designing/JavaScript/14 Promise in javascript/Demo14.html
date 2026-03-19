@@ -1,0 +1,27 @@
+<!-- Example showing the concept of Promise -->
+<script>
+    function gotoroom(){
+        new Promise((resolve,reject)=>{
+            resolve("gotoroom");
+        }).then((message)=>{
+            console.log(message);
+            new Promise((resolve,reject)=>{
+                resolve("removegarbage");
+            }).then((message)=>{
+                console.log(message);
+                new Promise((resolve,reject)=>{
+                    resolve("wonprize")
+                }).then((message)=>{
+                    console.log(message);
+                }).catch((error)=>{
+                    console.log("Error : "+error);
+                })
+            }).catch((error)=>{
+                console.log("Error : "+error);
+            })    
+        }).catch((error)=>{
+            console.log("Error : "+error);
+        })
+    }
+    gotoroom();
+</script>

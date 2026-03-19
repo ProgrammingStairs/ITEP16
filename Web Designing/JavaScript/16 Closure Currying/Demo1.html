@@ -1,0 +1,67 @@
+<script>
+    // example showing the concept of Closure 
+    /*
+    function outerFunction(){
+        function innerFunction(){
+            document.write("Example of closure takes place");
+        }
+        innerFunction();
+    }
+    outerFunction();
+    */ 
+
+    /*
+   function outerFunction(){
+        function innerFunction(){
+            document.write("Example of closure takes place..");
+        }
+        return innerFunction();
+    }
+    var res = outerFunction();
+    document.write(res);
+    */
+
+    /*
+   function outerFunction(){
+        function innerFunction(){
+            document.write("Example of closure takes place..");
+        }
+        return innerFunction;
+    }
+    var res = outerFunction();
+    res();
+    */
+
+    /*
+    function outerFunction(){
+        return ()=>{
+            document.write("Example of closure takes place.....");
+        }
+    }
+    var res = outerFunction();
+    res();
+    */
+
+    /*
+    function outerFunction(){
+        var name = "Peter Parker";
+        function innerFunction(){
+            document.write("Name : "+name);
+        }
+        return innerFunction;
+    }
+    var res = outerFunction();
+    res();
+    */
+
+    // closure + currying
+    function outerFunction(){
+        var fname = "Peter";
+        return (lname)=>{
+            document.write("Full Name : "+(fname+" "+lname));
+        }
+    }
+    var res = outerFunction();
+    res("Parker");
+   
+</script>
