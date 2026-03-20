@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo{
+            color:red;
+        }
+        .demoNew{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo" id="demoId">Lorem ipsum dolor sit amet.</div>
+    <script>
+        var demoId = document.getElementById("demoId");
+        demoId.classList.remove("demo");
+        demoId.classList.add("demoNew");
+</script>
+</body>
+</html>

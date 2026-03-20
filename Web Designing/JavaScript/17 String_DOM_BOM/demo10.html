@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <p id="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatibus non autem optio, numquam facilis quasi esse reprehenderit eligendi accusamus!</p>
+        <p id="para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatibus non autem optio, numquam facilis quasi esse reprehenderit eligendi accusamus!</p>
+    </div>
+    <button onclick="show()">Remove and Add</button>
+    <script>
+        function show(){
+            var main = document.getElementById("main");
+            var para1 = document.getElementById("para1");
+            var para2 = document.getElementById("para2");
+            
+            main.removeChild(para2);
+
+            var para = document.createElement("p");
+            var text = document.createTextNode("This is an example of JavaScript");
+            
+            para.appendChild(text);
+            main.appendChild(para);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">Lorem ipsum dolor sit amet.</div>
+    <div id="demo">Lorem ipsum dolor sit amet.</div>
+    <div id="demo">Lorem ipsum dolor sit amet.</div>
+    <script>
+        // var demo = document.querySelector("#demo");
+        // demo.style.color = "red";
+
+        var demoArray = document.querySelectorAll("#demo");
+        for(var i=0;i<demoArray.length;i++){
+            if(i==0)
+                demoArray[i].style.color="blue";
+            if(i==1)
+                demoArray[i].style.color="red";
+            if(i==2)
+                demoArray[i].style.color="green";
+        }
+    </script>
+</body>
+</html>

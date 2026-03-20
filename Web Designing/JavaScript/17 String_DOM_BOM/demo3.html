@@ -1,0 +1,33 @@
+<script>
+var str1 = ["red","green","blue","purple","orange"];
+document.write("<br>str1 : "+str1);
+// str1.splice(2,3);
+// str1.splice(2,0,"Yellow");
+// str1.splice(2,2,"Yellow");
+// document.write("<br>str1 : "+str1);
+
+// document.write("<br>str1 : "+str1.join());
+// document.write("<br>str1 : "+str1.join(""));
+// document.write("<br>str1 : "+str1.join(" "));
+// document.write("<br>str1 : "+str1.join(" , "));
+// document.write("<br>str1 : "+str1.join("-"));
+
+var str2  = "Hello user how are you ?";
+var str = str2.split(" ");
+str.forEach(s=>{document.write("<br>str : "+s);});
+
+document.write("<br>"+str2.includes("user"));
+document.write("<br>"+str2.includes("USER"));
+
+document.write("<br>"+str2.charAt(1));
+document.write("<br>"+str2.charCodeAt(15));
+document.write("<br>"+str2.startsWith("hello"));
+document.write("<br>"+str2.startsWith("Hello"));
+document.write("<br>"+str2.endsWith("hello"));
+document.write("<br>"+str2.replace('e','E'));
+document.write("<br>"+str2.replaceAll('e','E'));
+document.write("<br>"+str2.indexOf('H'));
+document.write("<br>"+str2.indexOf('Z'));
+document.write("<br>"+str2.lastIndexOf('e'));
+
+</script>

@@ -1,0 +1,32 @@
+<script>
+(()=>{
+    window.history.forward();
+})();
+document.write("<br>document is the object of : "+document.constructor.name);
+document.write("<br>window is the object of : "+window.constructor.name);
+
+var width = window.innerWidth;
+var height = window.innerHeight;
+document.write("<br>width : "+width);
+document.write("<br>height : "+height);
+
+var screenWidth = window.screen.height;
+var screenHeight = window.screen.width;
+document.write("<br>screen width : "+screenWidth);
+document.write("<br>screen height : "+screenHeight);
+document.write("<br>screen : "+window.screen.constructor.name);
+document.write("<br><br>location : "+window.location.constructor.name);
+document.write("<br>location.href : "+window.location.href);
+document.write("<br>location.host : "+window.location.host);
+document.write("<br>location.hostname : "+window.location.hostname);
+document.write("<br>location.protocol : "+window.location.protocol);
+document.write("<br>location.port : "+window.location.port);
+document.write("<br>location.pathname : "+window.location.pathname);
+
+document.write("<br><br>navigator : "+window.navigator.constructor.name);
+document.write("<br>navigator.onLine : "+navigator.onLine);
+document.write("<br><br>history : "+window.history.constructor.name);
+
+</script>
+<br>
+<a href="demo5.html">Click</a>
