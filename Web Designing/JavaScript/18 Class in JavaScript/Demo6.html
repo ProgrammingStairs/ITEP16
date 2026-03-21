@@ -1,0 +1,26 @@
+<script>
+    var l = parseInt(prompt("Enter length : "));
+    var b = parseInt(prompt("Enter breadth : "));
+    
+    class Rectangle{
+        #l; #b;
+        setData(l,b){
+            this.#l = l;
+            this.#b = b;
+        }
+        #area(){
+            document.write("<br>Area : "+(this.#l * this.#b));
+        }
+        #perimeter(){
+            document.write("<br>Perimeter : "+2*(this.#l + this.#b));
+        }
+        show(){
+            this.#perimeter();
+            this.#area();
+        }
+    }
+    const obj = new Rectangle();
+    obj.setData(l,b);
+    obj.show();
+    
+</script>

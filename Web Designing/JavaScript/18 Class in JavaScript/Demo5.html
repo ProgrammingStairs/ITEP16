@@ -1,0 +1,22 @@
+<script>
+    var num1 = parseInt(prompt("Enter first number : "));
+    var num2 = parseInt(prompt("Enter second number : "));
+    
+    class Demo3{
+        #a; #b;
+        setData(a,b){
+            this.#a = a;
+            this.#b = b;
+        }
+        #display(){
+            document.write("<br>a : "+this.#a+"<br>b : "+this.#b);
+        }
+        show(){
+            this.#display();
+        }
+    }
+    const obj = new Demo3();
+    obj.setData(num1,num2);
+    obj.show();
+    
+</script>

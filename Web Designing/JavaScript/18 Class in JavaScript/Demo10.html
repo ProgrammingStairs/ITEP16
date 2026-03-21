@@ -1,0 +1,15 @@
+<script>
+class Parent{
+
+}
+class Child extends Parent{
+        b = 200;
+        display(){
+            this.c = 400;
+        document.write("<br>Child called : "+this.b);
+        document.write("<br>Child called : "+this.c);
+    }
+}
+const obj = new Child();
+obj.display();
+</script>

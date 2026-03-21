@@ -1,0 +1,15 @@
+<script>
+class Parent{
+    age = 67;
+}
+class Child extends Parent{
+    constructor(a){
+        super();
+        this.b = 200;
+        document.write("<br>Child constructor called : "+a);
+        document.write("<br>Child constructor called : "+this.b);
+        document.write("<br>Child constructor called : "+this.age);
+    }
+}
+const obj = new Child(100);
+</script>

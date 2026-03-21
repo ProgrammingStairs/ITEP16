@@ -1,0 +1,24 @@
+<script>
+class Parent{
+    constructor(fname){
+        this.fname=fname;
+    }
+    show(){
+        document.write("<br>show method of parent called");
+    }
+}
+class Child extends Parent{
+    constructor(fname,lname){
+        super(fname);
+        this.lname = lname;
+        document.write("<br>Full Name : "+(this.fname+" "+this.lname));
+    }
+    show(){
+        const ob = new Parent();
+        ob.show();
+        document.write("<br>show method of child called");
+    }
+}
+const obj = new Child("Andrew","Anderson");
+obj.show();
+</script>

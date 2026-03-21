@@ -1,0 +1,26 @@
+<script>
+    var num1 = parseInt(prompt("Enter first number : "));
+    var num2 = parseInt(prompt("Enter second number : "));
+    
+    class Demo3{
+        setData(a,b){
+            this.a = a;
+            this.b = b;
+        }
+        display(){
+            document.write("<br>a : "+this.a+"<br>b : "+this.b);
+        }
+        swap(){
+            var temp = this.a;
+            this.a = this.b;
+            this.b = temp;
+        }    
+    }
+    const obj = new Demo3();
+    obj.setData(num1,num2);
+    document.write("<br>Before swapping");
+        obj.display();
+        obj.swap();
+    document.write("<br>After swapping");
+        obj.display();
+</script>
