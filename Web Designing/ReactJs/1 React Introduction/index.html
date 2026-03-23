@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- <script>
+        // normal javascript concept of printing text on html element
+        ReactDOM.render("This is an example of React Js",document.getElementById("root"));
+    </script> -->
+
+    <script type="text/babel">
+        // here <h1>This is an example of React Js</h1> represents jsx
+        ReactDOM.render(<h1>This is an example of React Js</h1>,document.getElementById("root"));
+    </script>
+
+</body>
+</html>
