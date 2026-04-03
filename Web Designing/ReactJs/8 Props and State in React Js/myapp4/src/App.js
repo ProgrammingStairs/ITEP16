@@ -2,85 +2,109 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import Display from './Display.js';
-function App() {
-  const[userObj,setUserObj] = useState({});
-  const[userArr,setUserArr] = useState([]);
-  const[index,setIndex] = useState(-1);
-  const getData = (event)=>{
+import React from 'react';
+
+class App extends React.Component{
+  state={
+    userObj:{},
+    userArr:[],
+    index:-1
+  }
+  getData = (event)=>{
     const {name,value} = event.target;
-    setUserObj({
-      ...userObj,
-      [name]:value
+    this.setState({
+      userObj:{
+        ...this.state.userObj,
+        [name]:value  
+      }
     });
   }
-  const handleSubmit = (event)=>{
+  handleSubmit = (event)=>{
     event.preventDefault();
-    if(index==-1){
-      setUserArr([
-        ...userArr,
-        userObj
-      ]);
+    if(this.state.index==-1){
+      this.setState({
+        userArr:[
+          ...this.state.userArr,
+          this.state.userObj
+        ]
+      });
     }else{
-      userArr.splice(index,1,userObj);
-      setUserArr([...userArr]);
-      setIndex(-1);
+      this.state.userArr.splice(this.state.index,1,this.state.userObj);
+      this.setState({
+        userArr:[...this.state.userArr]
+      });
+      this.setState({
+        index : -1
+      });
     }
-    setUserObj({
-      username:"",
-      email:"",
-      password:"",
-      address:""
-    })
+    this.setState({
+      userObj : {
+        username:"",
+        email:"",
+        password:"",
+        address:""
+      } 
+    });
     event.target.reset();
   }
-  const updateData = (obj)=>{
-    setUserObj(obj.user);
-    setIndex(obj.index);
+
+  updateData = (obj)=>{
+    this.setState({
+      userObj : obj.user
+    });
+    this.setState({
+      index : obj.index
+    });
   }
-  const deleteData = (index)=>{
-    userArr.splice(index,1);
-    setUserArr([...userArr]);
+  deleteData = (index)=>{
+    this.state.userArr.splice(index,1);
+    this.setState({
+      userArr : [
+        ...this.state.userArr
+      ]
+    });
   }
-  return (<div>
+  render(){
+      return (<div>
     <div style={{width:"25%",float:"left"}}>
       <blockquote>
         <h2>Fill Details</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <input
             type='text'
             placeholder='Enter Username'
             name='username'
             id='username'
-            onChange={getData}
-            value={userObj.username}
+            onChange={this.getData}
+            value={this.state.userObj.username}
           /> <br/>
           <input
             type='email'
             placeholder='Enter Email'
             name='email'
             id='email'
-            onChange={getData}
-            value={userObj.email}
+            onChange={this.getData}
+            value={this.state.userObj.email}
           /> <br/>
           <input
             type='password'
             placeholder='Enter Password'
             name='password'
             id='password'
-            onChange={getData}
-            value={userObj.password}
+            onChange={this.getData}
+            value={this.state.userObj.password}
           /> <br/>
           <input
             type='text'
             placeholder='Enter Address'
             name='address'
             id='address'
-            onChange={getData}
-            value={userObj.address}
+            onChange={this.getData}
+            value={this.state.userObj.address}
           /> <br/>
           <input
             type='submit'
-            value={index==-1 ? "Register" : "Update"}
+            value={this.state.index==-1 ? "Register" : "Update"}
           /> 
           <input
             type='reset'
@@ -91,10 +115,13 @@ function App() {
       </blockquote>
     </div>
     <div style={{width:"75%",float:"left"}}>
-      <Display data={userArr} delete={deleteData} update={updateData}/>    
+      <Display data={this.state.userArr} delete={this.deleteData} update={this.updateData}/>    
     </div>
   </div>);
+  }
 }
 
 export default App;
+
+
 
