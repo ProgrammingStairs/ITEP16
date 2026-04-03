@@ -1,0 +1,7 @@
+function Demo(){
+    useEffect(()=>{
+        ....
+        ....
+    });
+    return(<></>);
+}
