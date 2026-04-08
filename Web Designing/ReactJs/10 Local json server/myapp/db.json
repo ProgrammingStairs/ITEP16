@@ -1,0 +1,39 @@
+{
+  "profile": [
+    {
+      "id": "0949",
+      "username": "Andrew Anderson",
+      "email": "andrew@gmail.com",
+      "address": "indore",
+      "password": "123"
+    },
+    {
+      "id": "8387",
+      "username": "Peter Parker",
+      "email": "peter@gmail.com",
+      "address": "indore",
+      "password": "909090"
+    },
+    {
+      "id": "b84e",
+      "username": "Jackson Jack",
+      "email": "jack@gmail.com",
+      "address": "indore",
+      "password": "999"
+    },
+    {
+      "id": "18ec",
+      "username": "Andrew Anderson",
+      "email": "andrew@gmail.com",
+      "address": "indore",
+      "password": "676767"
+    },
+    {
+      "id": "7693",
+      "username": "new data",
+      "email": "newec@gmail.com",
+      "password": "wert",
+      "address": "usa"
+    }
+  ]
+}

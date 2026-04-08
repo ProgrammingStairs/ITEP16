@@ -3,20 +3,18 @@ import './App.css';
 import { useEffect, useState } from 'react';
 function App() {
   const [data, setData] = useState([]);
-  async function getData() {
-    try{
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-      const arr = await response.json();
-      setData(arr)
-    }catch(error){
-      console.log("Error : ", error);
-    };
+  function getData() {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(response => response.json())
+      .then(arr => { setData(arr); })
+      .catch((error) => {
+        console.log("Error : ", error);
+      });
   }
   useEffect(() => {
     getData();
   }, []);
   return (<>
-  <center><h3>User Data</h3></center>
     <table border={1} width="100%" cellSpacing={0}>
       <tr>
         <th>S.No</th>
