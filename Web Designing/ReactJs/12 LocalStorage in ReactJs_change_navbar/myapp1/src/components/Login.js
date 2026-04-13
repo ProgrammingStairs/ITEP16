@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 function Login(){
     const [userObj,setUserObj] = useState({});
+    const location = useLocation();
+    const navigate = useNavigate();
     const getData = (event)=>{
         const {name,value} = event.target;
         setUserObj({
@@ -10,7 +13,22 @@ function Login(){
     }
     const handleSubmit = (event)=>{
         event.preventDefault();
-
+        var existingData = JSON.parse(localStorage.getItem("data"));
+        var res = existingData.find(obj=> obj.email==userObj.email && obj.password==userObj.password);
+        if(res){
+            localStorage.setItem("loggedInEmail",userObj.email);
+            navigate("/profile",{
+                state:{
+                    email : userObj.email
+                }
+            });
+        }else{
+            navigate("/login",{
+                state:{
+                    message:"Credentials Not Matched"
+                }
+            });
+        }
         event.target.reset();
     }
     useEffect(()=>{
@@ -18,6 +36,8 @@ function Login(){
     },[]);
     return (<blockquote>
         <h2>Login</h2>
+        {/* {console.log(location.state?.message)} */}
+        {location.state?.message ? location.state.message : ''}
         <form onSubmit={handleSubmit}>
             <input
                 type="email"

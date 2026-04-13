@@ -8,7 +8,8 @@ import Contact from './components/Contact.js';
 import Navbar from './components/Navbar.js';
 import Login from './components/Login.js';
 import Register from './components/Register.js';
-
+import Profile from './components/Profile.js';
+import ViewUser from './components/ViewUser.js';
 function App() {
   return (<>
     <Router>
@@ -20,6 +21,8 @@ function App() {
           <Route path="/contact"  element={<Contact/>}/>
           <Route path="/login"  element={<Login/>}/>
           <Route path="/register"  element={<Register/>}/>
+          <Route path="/profile"  element={<Profile/>}/>
+          <Route path="/viewUser"  element={<ViewUser/>}/>
         </Routes>
     </Router>
   </>);

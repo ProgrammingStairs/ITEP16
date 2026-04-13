@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Register(){
     const [userObj,setUserObj] = useState({});
+    const navigate = useNavigate();
+    const [userArray,setUserArray] = useState([]);
     const getData = (event)=>{
         const {name,value} = event.target;
         setUserObj({
@@ -11,7 +14,29 @@ function Register(){
     }
     const handleSubmit = (event)=>{
         event.preventDefault();
-
+        const data = JSON.parse(localStorage.getItem("data"));
+        if(!data){
+            localStorage.setItem("data",JSON.stringify([userObj]));
+            navigate("/login",{
+                    state:{
+                        message : "Registration successful"
+                    }
+                });
+        }else{
+            var existingData = JSON.parse(localStorage.getItem("data"));
+            var res = existingData.find(obj=> obj.email==userObj.email);
+            // console.log("-------------------- : ",res);
+            if(!res){
+                localStorage.setItem("data",JSON.stringify([...existingData,userObj]));
+                navigate("/login",{
+                    state:{
+                        message : "Registration successful"
+                    }
+                });
+            }
+            else 
+                alert("Email Id already exist");
+        }
         event.target.reset();
     }
         useEffect(()=>{
