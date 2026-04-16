@@ -1,0 +1,52 @@
+*{
+    font-family: candara;
+}
+#header{
+    height: 140px;
+    padding: 10px;
+    background-color: #234567;
+    color:white;
+}
+#footer{
+    padding: 10px;
+    font-size: 22px;
+    background-color: #234567;
+    color:white;
+}
+#row{
+    height: 460px;
+}
+#left{
+    padding: 30px;
+    background-color: lightgrey;
+    width: 20%;
+    text-align: center;
+    height: 87%;
+    float: left;
+}
+button{
+    height:40px;
+    width: 200px;
+    font-size: 18px;
+    border-width: 0px;
+    background-color: #234567;
+    color:white;
+    margin: 2px;
+}
+#right{
+    padding: 30px;
+    background-color: grey;
+    width: 70.1%;
+    text-align: center;
+    height: 87%;
+    float: left;
+}
+#right b{
+    font-size: 22px;
+    color:white;
+}
+input{
+    height: 35px;
+    width: 300px;
+    font-size: 18px;
+}
