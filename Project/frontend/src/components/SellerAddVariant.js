@@ -41,7 +41,7 @@ function SellerAddVariant() {
                         <input
                             type="text"
                             class="form-control"
-                            name="Color"
+                            name="color"
                             placeholder='Enter Color'
                         /></div>
                         <div class="mb-3">
