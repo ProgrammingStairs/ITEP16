@@ -1,5 +1,7 @@
 package com.springboot.config;
 
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,6 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.springboot.filter.JwtFilter;
 import com.springboot.service.CustomUserDetailsService;
@@ -42,7 +45,9 @@ public class SpringSecurityConfig {
 	}
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		System.out.print("gets entry.........");
 		http
+			.cors(cors->cors.configurationSource(corsConfigurationSource()))
 			.csrf(csrf->csrf.disable())
 			.sessionManagement(sm->sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 			.authorizeHttpRequests(auth->auth
@@ -50,7 +55,7 @@ public class SpringSecurityConfig {
 				.requestMatchers("/admin/**").hasRole("ADMIN")
 				.requestMatchers("/user/**").hasRole("USER")
 				.requestMatchers("/seller/**").hasRole("SELLER")
-				//.requestMatchers("/uploads/**")
+				.requestMatchers("/uploads/**").permitAll()
 				.anyRequest().authenticated()
 			)
 			.authenticationProvider(daoAuthenticationProvider())
@@ -63,10 +68,15 @@ public class SpringSecurityConfig {
 	public CorsConfigurationSource corsConfigurationSource() {
 		
 		CorsConfiguration configuration = new CorsConfiguration();
-		configuration.setAllowedHeaders(null);
-		configuration.setAllowedMethods(null);
-		configuration.setExposedHeaders(null);
-		configuration.setAllowedOrigins(null);
+		configuration.setAllowedOrigins(List.of("http://localhost:3000"));
+		configuration.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
+		configuration.setAllowedHeaders(List.of("*"));
+		configuration.setAllowCredentials(true);
+		configuration.setExposedHeaders(List.of("Set-Cookie"));
+		
+		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		source.registerCorsConfiguration("/**", configuration);
+		return source;
 	}
 }
 

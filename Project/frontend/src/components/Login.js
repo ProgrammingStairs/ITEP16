@@ -1,32 +1,49 @@
+import { useState } from 'react';
 import banner from '../public/images/login1.jpg';
+import { useDispatch } from 'react-redux';
+import {useNavigate} from 'react-router-dom';
+import { loginThunk } from '../store/loginSlice.js';
 function Login(){
+    const [obj,setObj] = useState({});
+    const dispatch = useDispatch();
+    const navigate = useNavigate(); 
+    const getData = (event)=>{
+        const {name,value} = event.target;
+        setObj({
+            ...obj,
+            [name]:value
+        });
+    }
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+        dispatch(loginThunk(obj));
+        event.target.reset();
+    }
     return(<div className="row p-5">
         <div className="col-lg-6">
             <img src={banner} className='d-block w-100' alt="Image"/>
         </div>
         <div className="col-lg-6 p-5">
             <h4>Login Form</h4>
-            <form>
+            <form onSubmit={handleSubmit} method="post">
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <label class="form-label">Email address</label>
     <input 
         type="email" 
         class="form-control" 
-        id="exampleInputEmail1" 
-        aria-describedby="emailHelp"
         name="email"
-        placeholder='Enter Email'    
+        placeholder='Enter Email'
+        onChange={getData}    
     />
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <label class="form-label">Password</label>
     <input 
         type="password" 
         class="form-control" 
-        id="exampleInputPassword1"
         name="password"
-        placeholder='Enter Password'    
+        placeholder='Enter Password'
+        onChange={getData}    
     />
   </div>
   <button type="submit" class="btn btn-dark w-100">Login</button>

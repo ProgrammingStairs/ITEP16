@@ -23,9 +23,6 @@ public class MobileVariant {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int mobilevariantid;
 	
-	@Column(name="mobileid")
-	private int mobileid;
-	
 	@Column(name="price")
 	private double price;
 	

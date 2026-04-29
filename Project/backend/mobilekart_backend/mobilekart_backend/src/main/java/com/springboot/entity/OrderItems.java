@@ -23,9 +23,6 @@ public class OrderItems {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int orderitemsid;
 	
-	@Column(name="orderid")
-	private int orderid;
-	
 	@Column(name="variantid")
 	private int variantid;
 	
@@ -46,5 +43,5 @@ public class OrderItems {
 	
 	@ManyToOne
 	@JoinColumn(name="orderid")
-	private Order order;
+	private Orders orders;
 }

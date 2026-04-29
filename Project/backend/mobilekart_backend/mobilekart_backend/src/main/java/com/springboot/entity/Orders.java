@@ -21,11 +21,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="order")
+@Table(name="orders")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Order {
+public class Orders {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -66,17 +66,17 @@ public class Order {
 	@UpdateTimestamp
 	private LocalDateTime updatedat;
 	
-	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL,orphanRemoval = true)
+	@OneToMany(mappedBy = "orders", cascade = CascadeType.ALL,orphanRemoval = true)
 	private List<OrderItems> orderitems = new ArrayList<OrderItems>();
 
 	public void addOrderItems(OrderItems item) {
 		orderitems.add(item);
-		item.setOrder(this);
+		item.setOrders(this);
 	}
 	
 	public void removeOrderItems(OrderItems item) {
 		orderitems.remove(item);
-		item.setOrder(null);
+		item.setOrders(null);
 	}
 	
 }
