@@ -29,7 +29,7 @@ public class User {
 	@Column(name="name")
 	private String name;
 	
-	@Column(name="email")
+	@Column(name="email") // also set unique true but we manage it in UserServiceImpl
 	private String email;
 	
 	@Column(name="password")

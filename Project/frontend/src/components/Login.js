@@ -7,6 +7,7 @@ function Login(){
     const [obj,setObj] = useState({});
     const dispatch = useDispatch();
     const navigate = useNavigate(); 
+    const [msg,setMsg] = useState('');
     const getData = (event)=>{
         const {name,value} = event.target;
         setObj({
@@ -14,9 +15,21 @@ function Login(){
             [name]:value
         });
     }
-    const handleSubmit = (event)=>{
+    const handleSubmit = async(event)=>{
         event.preventDefault();
-        dispatch(loginThunk(obj));
+        try{
+            const data = await dispatch(loginThunk(obj)).unwrap();
+            // console.log("-----------data : ",data);
+            if(data.role=="ROLE_ADMIN")
+                navigate('/admin/adminHome');
+            else if(data.role=="ROLE_USER")
+                navigate('/user/userHome');
+            else if(data.role=="ROLE_SELLER")
+                navigate('/seller/sellerHome');
+        }catch(error){
+            console.log("......error : ",error);
+            setMsg('Something Went Wrong');
+        }
         event.target.reset();
     }
     return(<div className="row p-5">
@@ -25,6 +38,7 @@ function Login(){
         </div>
         <div className="col-lg-6 p-5">
             <h4>Login Form</h4>
+            {msg}
             <form onSubmit={handleSubmit} method="post">
   <div class="mb-3">
     <label class="form-label">Email address</label>

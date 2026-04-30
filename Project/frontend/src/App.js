@@ -11,6 +11,9 @@ import SellerRegister from './components/SellerRegister.js';
 import UserRegister from './components/UserRegister.js';
 import SellerAddMobile from './components/SellerAddMobile.js';
 import SellerAddVariant from './components/SellerAddVariant.js';
+import AdminHome from './components/AdminHome.js';
+import UserHome from './components/UserHome.js';
+
 function App() {
   return (<>
     <Router>
@@ -23,6 +26,8 @@ function App() {
         <Route path="/seller/addMobile" element={<SellerAddMobile/>}></Route>
         <Route path="/seller/addVariant" element={<SellerAddVariant/>}></Route>
         <Route path="/user/register" element={<UserRegister/>}></Route>
+        <Route path="/admin/adminHome" element={<AdminHome/>}></Route>
+        <Route path="/user/userHome" element={<UserHome/>}></Route>
 
       </Routes>
     </Router>
