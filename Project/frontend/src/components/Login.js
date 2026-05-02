@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import banner from '../public/images/login1.jpg';
 import { useDispatch } from 'react-redux';
-import {useNavigate} from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 import { loginThunk } from '../store/loginSlice.js';
 function Login(){
     const [obj,setObj] = useState({});
     const dispatch = useDispatch();
     const navigate = useNavigate(); 
     const [msg,setMsg] = useState('');
+    const location = useLocation();
     const getData = (event)=>{
         const {name,value} = event.target;
         setObj({
@@ -15,6 +16,19 @@ function Login(){
             [name]:value
         });
     }
+    useEffect(()=>{
+        const param_url = new URLSearchParams(location.search);
+        const message = param_url.get("message");
+
+        if(message=="Invalid_Token")
+            setMsg("Invalid Token");
+        else if(message=="Seller_Not_Found")
+            setMsg("Seller Not Found");
+        else if(message=="Wait_for_admin_approval")
+            setMsg("Wait For Admin Approval");
+        
+    },[location.search]);
+
     const handleSubmit = async(event)=>{
         event.preventDefault();
         try{
@@ -38,6 +52,7 @@ function Login(){
         </div>
         <div className="col-lg-6 p-5">
             <h4>Login Form</h4>
+            {location.state?.message ? location.state.message : ''}
             {msg}
             <form onSubmit={handleSubmit} method="post">
   <div class="mb-3">

@@ -5,7 +5,7 @@ function Navbar(){
     const navShow = useSelector(state=> state.common.navShow)
     const [menuItem,setMenuItem]=useState();
     useEffect(()=>{
-        const timer = setInterval(()=>{
+       // const timer = setInterval(()=>{
           if(navShow=="home"){
               setMenuItem(<>
                 <li className="nav-item">
@@ -73,7 +73,8 @@ function Navbar(){
                 </li>
               </>)
         }
-        },1000);
+        // },1000);
+        //     return ()=> clearInterval(timer);
     },[navShow]);
     return(<>
     <nav style={{position:"sticky",top:"58px",zIndex:999}} className="navbar navbar-expand-lg navbar-dark bg-dark">

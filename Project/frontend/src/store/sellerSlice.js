@@ -3,13 +3,14 @@ import axios from "axios";
 const  initialState={
     sellerObj:{}
 }
-const sellerRegisterThunk = createAsyncThunk("sellerSlice/sellerRegisterThunk",async(sellerObj)=>{
+const sellerRegistrationThunk = createAsyncThunk("sellerSlice/sellerRegistrationThunk",async(obj,{rejectWithValue})=>{
     try{
-        const result = await axios.post("http://localhost:8080/seller/register",sellerObj);
-        console.log("result : ",result);
-        return result;
+        const result = await axios.post("http://localhost:8080/seller/registration",obj);
+        console.log("result in seller registration : ",result.data);
+        return result.data;
     }catch(error){
-
+        console.log("error in seller registration thunk : ",error);
+        return rejectWithValue();
     }
 })
 const SellerSlice = createSlice({
@@ -20,13 +21,14 @@ const SellerSlice = createSlice({
     },
     extraReducers:(builder)=>{
         builder 
-            .addCase(sellerRegisterThunk.pending,(state)=>{})
-            .addCase(sellerRegisterThunk.fulfilled,(state,action)=>{
+            .addCase(sellerRegistrationThunk.pending,(state)=>{})
+            .addCase(sellerRegistrationThunk.fulfilled,(state,action)=>{
 
             })
-            .addCase(sellerRegisterThunk.rejected,(state)=>{})
+            .addCase(sellerRegistrationThunk.rejected,(state)=>{})
     }
 })
 
 export const {} = SellerSlice.actions;
+export {sellerRegistrationThunk};
 export default SellerSlice.reducer;

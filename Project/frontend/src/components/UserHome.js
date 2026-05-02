@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { setNavShow } from '../store/commonSlice.js';
 function UserHome() {
-    var email = useSelector(state=> state.login.loggedInEmail);
+    const email = useSelector(state=> state.login.loggedInEmail);
     console.log("email = ",email);
     
     const [loggedEmail,setLoggedEmail] = useState();
@@ -18,8 +18,9 @@ function UserHome() {
         }else{
                           console.log("email inside else = ",email);
 
-            var email = localStorage.getItem("email");
-            setLoggedEmail(email);
+            var receiveEmail = localStorage.getItem("email");
+            // needs to set different names from the variable names which we use to set store data received from useSelector
+            setLoggedEmail(receiveEmail);
         }
         dispatch(setNavShow("user"));
     },[email]);

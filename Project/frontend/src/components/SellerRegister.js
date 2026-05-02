@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import banner from '../public/images/register1.jpg';
 import { useDispatch } from 'react-redux';
+import { sellerRegistrationThunk } from '../store/sellerSlice.js';
+import { useNavigate } from 'react-router-dom';
 function SellerRegister() {
     const[sellerObj,setSeller] = useState();
+    const[msg,setMsg]=useState();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const getData = (event)=>{
         const {name,value} = event.target;
         setSeller({
@@ -11,9 +15,17 @@ function SellerRegister() {
             [name]:value
         });
     }
-    const handleSubmit = (event)=>{
+    const handleSubmit = async(event)=>{
         event.preventDefault();
-        dispatch();
+        const data = await dispatch(sellerRegistrationThunk(sellerObj)).unwrap();
+        if(data.status==200)
+            navigate("/login",{
+                state:{
+                    message : data.message
+                }
+            });
+        else 
+            setMsg("Something Went Wrong");
         event.target.reset();
     }
     return (<div className="row p-5">
@@ -22,6 +34,7 @@ function SellerRegister() {
         </div>
         <div className="col-lg-8 row">
             <h4>Register Form | Seller</h4>
+            {msg}
             <form className="form-control" onSubmit={handleSubmit}>
                 <div style={{ height: "auto", float: "left", marginLeft: "40px" }} className='col-lg-5'>
                     <div class="mb-3">

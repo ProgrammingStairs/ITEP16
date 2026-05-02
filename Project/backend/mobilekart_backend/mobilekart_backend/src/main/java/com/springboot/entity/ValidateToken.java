@@ -1,5 +1,7 @@
 package com.springboot.entity;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,5 +30,5 @@ public class ValidateToken {
 	private String token;
 	
 	@Column(name="expirytime")
-	private String expirytime;
+	private LocalDateTime expirytime;
 }
