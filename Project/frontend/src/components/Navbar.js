@@ -72,6 +72,30 @@ function Navbar(){
                   <Link className="nav-link text-white" to='/'>Logout</Link>
                 </li>
               </>)
+        }else if(navShow=="seller"){
+              setMenuItem(<>
+                <li className="nav-item">
+                  <Link className="nav-link active" aria-current="page" to="/seller/sellerHome">Home</Link>
+                </li>
+                <li className="nav-item ">
+                  <Link className="nav-link text-white" to='/seller/addMobile'>AddMobile</Link>
+                </li>
+                <li className="nav-item ">
+                  <Link className="nav-link text-white" to='/'>ViewAddedMobiles</Link>
+                </li>
+                <li className="nav-item ">
+                  <Link className="nav-link text-white" to='/'>Orders</Link>
+                </li>
+                <li className="nav-item ">
+                  <Link className="nav-link text-white" to='/'>Profile</Link>
+                </li>
+                <li className="nav-item ">
+                  <Link className="nav-link text-white" to='/'>Update Password</Link>
+                </li>
+                <li className="nav-item ">
+                  <Link className="nav-link text-white" to='/'>Logout</Link>
+                </li>
+              </>)
         }
         // },1000);
         //     return ()=> clearInterval(timer);

@@ -1,5 +1,34 @@
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setNavShow } from "../store/commonSlice.js";
+import { useSearchParams } from "react-router-dom";
+
 function SellerAddVariant() {
+    var email = useSelector(state=> state.login.loggedInEmail);
+    const [loggedEmail,setLoggedEmail] = useState();
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        if(email){
+            localStorage.setItem("email",email);
+            setLoggedEmail(email);
+        }else{
+            var emailReceived = localStorage.getItem("email");
+            setLoggedEmail(emailReceived);
+        }
+        dispatch(setNavShow("seller"));
+    },[email]);
+
+   const [searchParam] = useSearchParams(); // destructuring
+
+const mobileId = searchParam.get("mobileId");
+const sellerId = searchParam.get("sellerId");
+
+console.log("mobileId :", mobileId);
+console.log("sellerId :", sellerId);
+
     return (<div className="row p-3">
+               <h5>Mobilekart | <span className='text-primary'>Seller Home</span> | {loggedEmail}</h5>
+            
             <h4>Add Variant</h4>
             <form className="form-control" encType="multipart/form-data">
                 <div class="row">

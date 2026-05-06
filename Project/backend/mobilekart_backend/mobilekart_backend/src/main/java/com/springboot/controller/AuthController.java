@@ -47,6 +47,8 @@ public class AuthController {
 			cookie.setMaxAge(24*60*60);
 			response.addCookie(cookie);
 			
+			System.out.print("cookie : "+cookie);
+			
 			LoginResponseDTO responseDTO = new LoginResponseDTO();
 			responseDTO.setToken(token);
 			responseDTO.setEmail(email);

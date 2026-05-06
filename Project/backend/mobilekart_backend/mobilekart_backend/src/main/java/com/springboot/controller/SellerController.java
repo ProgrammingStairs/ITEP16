@@ -1,11 +1,13 @@
 package com.springboot.controller;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,14 +15,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springboot.dto.MobileRequestDTO;
+import com.springboot.dto.MobileResponseDTO;
 import com.springboot.dto.SellerRequestDTO;
 import com.springboot.dto.SellerResponseDTO;
 import com.springboot.dto.UserRequestDTO;
 import com.springboot.dto.UserResponseDTO;
+import com.springboot.entity.Mobile;
 import com.springboot.entity.Seller;
 import com.springboot.entity.ValidateToken;
+import com.springboot.repository.MobileRepository;
 import com.springboot.repository.SellerRepository;
 import com.springboot.service.MailService;
+import com.springboot.service.MobileService;
 import com.springboot.service.SellerService;
 import com.springboot.service.ValidateTokenService;
 
@@ -34,11 +41,16 @@ public class SellerController {
 	private MailService mailService;
 	private SellerService sellerService;
 	private SellerRepository sellerRepository;
-	public SellerController(SellerService sellerService,ValidateTokenService validateTokenService,MailService mailService,SellerRepository sellerRepository) {
+	private MobileService mobileService;
+	private MobileRepository mobileRepository;
+	
+	public SellerController(SellerService sellerService,ValidateTokenService validateTokenService,MailService mailService,SellerRepository sellerRepository,MobileService mobileService,MobileRepository mobileRepository) {
 		this.sellerService = sellerService;
 		this.validateTokenService=validateTokenService;
 		this.mailService = mailService;
 		this.sellerRepository=sellerRepository;
+		this.mobileService=mobileService;
+		this.mobileRepository=mobileRepository;
 	}
 	
 	@PostMapping("/registration")
@@ -74,4 +86,36 @@ public class SellerController {
 		
 		response.sendRedirect("http://localhost:3000/login?message=Wait_for_admin_approval");		
 	}
+	
+	@PostMapping("/addMobile")
+	public ResponseEntity<Map<String,Object>> addMobile(@RequestBody MobileRequestDTO request,Authentication authentication){
+		String email = authentication.getName();
+		Seller seller =  sellerRepository.findByEmail(email)
+			.orElseThrow(()->new RuntimeException("Seller Not Found"));
+		request.setSellerid(seller.getSellerid());
+		MobileResponseDTO response = mobileService.addMobile(request);
+		return ResponseEntity.status(HttpStatus.OK).body(
+				Map.of(
+						"message","Mobile Added Successfully",
+						"mobileDto", response,
+						"status",200
+				)
+		);
+	}
+	@GetMapping("/sellerMobileList")
+	public ResponseEntity<List<MobileResponseDTO>> mobileList(){
+		List<Mobile> mobileList = mobileRepository.findAll();
+		List<MobileResponseDTO> response = mobileList.stream()
+				.map(s-> new MobileResponseDTO(
+						s.getMobileid(),
+						s.getSellerid(),
+						s.getBrand(),
+						s.getModelname(),
+						s.getDescription(),
+						s.getCreatedat(),
+						s.getUpdatedat()						
+				)).toList();
+		return ResponseEntity.status(HttpStatus.OK).body(response);
+	}
+
 }

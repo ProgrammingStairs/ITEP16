@@ -1,5 +1,9 @@
 package com.springboot.repository;
 
-public class MobileRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.springboot.entity.Mobile;
+
+public interface MobileRepository extends JpaRepository<Mobile, Integer>{
+	
 }
