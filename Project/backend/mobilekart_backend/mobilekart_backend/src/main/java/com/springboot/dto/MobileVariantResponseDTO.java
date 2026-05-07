@@ -2,6 +2,8 @@ package com.springboot.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.springboot.entity.MobileVariant;
+
 import lombok.Data;
 
 @Data
@@ -28,4 +30,9 @@ public class MobileVariantResponseDTO {
 	private int mobileid;
 	private String imagename;
 	private String imageurl;
+	
+	public MobileVariantResponseDTO(MobileVariant mobileVariant) {
+		
+		
+	}
 }

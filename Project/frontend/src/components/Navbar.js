@@ -81,7 +81,7 @@ function Navbar(){
                   <Link className="nav-link text-white" to='/seller/addMobile'>AddMobile</Link>
                 </li>
                 <li className="nav-item ">
-                  <Link className="nav-link text-white" to='/'>ViewAddedMobiles</Link>
+                  <Link className="nav-link text-white" to='/seller/viewMobiles'>ViewAddedMobiles</Link>
                 </li>
                 <li className="nav-item ">
                   <Link className="nav-link text-white" to='/'>Orders</Link>

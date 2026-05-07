@@ -16,7 +16,7 @@ public class MobileResponseDTO {
 	private LocalDateTime createdat;
 	private LocalDateTime updatedat;
 	
-	List<MobileVariantResponseDTO> variants = new ArrayList<>();
+	private List<MobileVariantResponseDTO> variants = new ArrayList<>();
 	public MobileResponseDTO() {}
 	public MobileResponseDTO(int mobileid, int sellerid, String brand, String modelname, String description,
 			LocalDateTime createdat, LocalDateTime updatedat) {

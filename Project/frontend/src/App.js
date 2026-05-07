@@ -15,6 +15,7 @@ import AdminHome from './components/AdminHome.js';
 import AdminSellerList from './components/AdminSellerList.js';
 import UserHome from './components/UserHome.js';
 import SellerHome from './components/SellerHome.js';
+import SellerViewMobiles from './components/SellerViewMobiles.js';
 
 function App() {
   return (<>
@@ -32,6 +33,7 @@ function App() {
         <Route path="/user/userHome" element={<UserHome/>}></Route>
         <Route path="/seller/sellerHome" element={<SellerHome/>}></Route>
         <Route path="/seller/sellerAddVariant" element={<SellerAddVariant/>}></Route>
+        <Route path="/seller/viewMobiles" element={<SellerViewMobiles/>}></Route>
         
       </Routes>
     </Router>
