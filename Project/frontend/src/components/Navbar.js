@@ -57,13 +57,13 @@ function Navbar(){
                   <Link className="nav-link active" aria-current="page" to="/user/userHome">Home</Link>
                 </li>
                 <li className="nav-item ">
-                  <Link className="nav-link text-white" to='/'>MobileList</Link>
+                  <Link className="nav-link text-white" to='/user/viewMobiles'>MobileList</Link>
                 </li>
                 <li className="nav-item ">
-                  <Link className="nav-link text-white" to='/'>Order</Link>
+                  <Link className="nav-link text-white" to='/user/viewCart'>View Cart</Link>
                 </li>
                 <li className="nav-item ">
-                  <Link className="nav-link text-white" to='/'>Profile</Link>
+                  <Link className="nav-link text-white" to='/user/viewOrders'>Order</Link>
                 </li>
                 <li className="nav-item ">
                   <Link className="nav-link text-white" to='/'>Update Password</Link>

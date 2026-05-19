@@ -13,7 +13,7 @@ public class OrderRequestDTO {
 	private String address;
 	private String city;
 	private String state;
-	private String pincode;
+	private int pincode;
 	
 	private List<OrderItemsRequestDTO> orderitems = new ArrayList<OrderItemsRequestDTO>();
 

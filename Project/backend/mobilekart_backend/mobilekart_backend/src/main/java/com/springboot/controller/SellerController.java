@@ -174,12 +174,12 @@ public class SellerController {
 	}
 	
 	@GetMapping("/sellerViewMobileList")
-	public ResponseEntity<Map<String, Object>> viewMobile(Authentication authentication){
+	public ResponseEntity<List<MobileResponseDTO>> viewMobile(Authentication authentication){
 		String email = authentication.getName();
 		Seller seller =  sellerRepository.findByEmail(email)
 				.orElseThrow(()->new RuntimeException("Seller Not Found"));
 			
-		List<Mobile> list = mobileRepository.findBySellerId(seller.getSellerid());
+		List<Mobile> list = mobileRepository.findBySellerid(seller.getSellerid());
 		List<MobileResponseDTO> mobileResponse = list.stream().map((mobile)->{
 			MobileResponseDTO responseDTO = new MobileResponseDTO();
 			responseDTO.setMobileid(mobile.getMobileid());
@@ -198,7 +198,7 @@ public class SellerController {
 			return responseDTO;
 			
 		}).toList();
-		return null;
+		return ResponseEntity.ok(mobileResponse);
 	}
 	
 }

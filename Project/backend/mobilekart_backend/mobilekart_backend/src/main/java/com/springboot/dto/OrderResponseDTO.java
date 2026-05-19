@@ -17,7 +17,7 @@ public class OrderResponseDTO {
 	private String address;
 	private String city;
 	private String state;
-	private String pincode;
+	private int pincode;
 	private LocalDateTime createdat;
 	private LocalDateTime updatedat;
 	private List<OrderItemsResponseDTO> orderitems = new ArrayList<OrderItemsResponseDTO>();

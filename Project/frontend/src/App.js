@@ -16,6 +16,9 @@ import AdminSellerList from './components/AdminSellerList.js';
 import UserHome from './components/UserHome.js';
 import SellerHome from './components/SellerHome.js';
 import SellerViewMobiles from './components/SellerViewMobiles.js';
+import UserViewMobiles from './components/UserViewMobiles.js';
+import UserViewCart from './components/UserViewCart.js';
+import UserViewOrders from './components/UserViewOrders.js';
 
 function App() {
   return (<>
@@ -34,6 +37,9 @@ function App() {
         <Route path="/seller/sellerHome" element={<SellerHome/>}></Route>
         <Route path="/seller/sellerAddVariant" element={<SellerAddVariant/>}></Route>
         <Route path="/seller/viewMobiles" element={<SellerViewMobiles/>}></Route>
+        <Route path="/user/viewMobiles" element={<UserViewMobiles/>}></Route>
+        <Route path="/user/viewCart" element={<UserViewCart/>}></Route>
+        <Route path="/user/viewOrders" element={<UserViewOrders/>}></Route>
         
       </Routes>
     </Router>

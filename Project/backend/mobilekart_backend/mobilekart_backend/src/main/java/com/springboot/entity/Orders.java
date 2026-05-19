@@ -58,6 +58,8 @@ public class Orders {
 	@Column(name="pincode")
 	private int pincode;
 	
+	// we can also add username who place order and also contact no.
+	
 	@Column(name="createdat",updatable = false)
 	@CreationTimestamp
 	private LocalDateTime createdat;
