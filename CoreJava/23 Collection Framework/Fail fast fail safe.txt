@@ -1,0 +1,195 @@
+Fail-Fast vs Fail-Safe Iterator in Java
+
+Iterators are used to traverse collection elements.
+
+There are mainly 2 types:
+
+Fail-Fast Iterator
+Fail-Safe Iterator
+1. Fail-Fast Iterator
+
+A fail-fast iterator throws an exception if the collection is modified while iterating.
+
+Exception:
+
+ConcurrentModificationException
+
+Used by:
+
+ArrayList
+HashMap
+HashSet
+Vector
+How Fail-Fast Works?
+
+It uses an internal variable called:
+
+modCount
+
+If collection structure changes during iteration, iterator detects modification and throws exception.
+
+Fail-Fast Example
+import java.util.*;
+
+class Demo {
+    public static void main(String args[]) {
+
+        ArrayList<String> list = new ArrayList<>();
+
+        list.add("A");
+        list.add("B");
+        list.add("C");
+
+        Iterator<String> itr = list.iterator();
+
+        while(itr.hasNext()) {
+
+            String value = itr.next();
+
+            if(value.equals("B")) {
+
+                list.add("D");
+
+            }
+
+            System.out.println(value);
+        }
+    }
+}
+
+Output:
+
+A
+B
+ConcurrentModificationException
+2. Fail-Safe Iterator
+
+Fail-safe iterator does NOT throw exception when collection is modified during iteration.
+
+It works on:
+
+Clone copy
+Snapshot of collection
+
+Used by:
+
+ConcurrentHashMap
+CopyOnWriteArrayList
+Fail-Safe Example
+import java.util.concurrent.CopyOnWriteArrayList;
+
+class Demo {
+    public static void main(String args[]) {
+
+        CopyOnWriteArrayList<String> list =
+                new CopyOnWriteArrayList<>();
+
+        list.add("A");
+        list.add("B");
+        list.add("C");
+
+        for(String value : list) {
+
+            if(value.equals("B")) {
+
+                list.add("D");
+
+            }
+
+            System.out.println(value);
+        }
+
+        System.out.println(list);
+    }
+}
+
+Output:
+
+A
+B
+C
+[A, B, C, D]
+
+No exception occurs.
+--------------------------
+1. What is Stream API in Java?
+Answer
+
+Stream API was introduced in Java 8.
+
+It is used to process collections in a functional and efficient manner.
+
+Package:
+
+import java.util.stream.*;
+
+Benefits:
+
+Less code
+Better readability
+Parallel processing
+Functional programming support
+2. Difference Between Collection and Stream
+Collection	Stream
+Stores data	Processes data
+Mutable	Not mutable
+Can iterate multiple times	Can iterate once
+Uses external iteration	Uses internal iteration
+3. How to Create Stream?
+From List
+List<Integer> list = Arrays.asList(1,2,3,4);
+
+Stream<Integer> s = list.stream();
+From Array
+int arr[] = {1,2,3};
+
+IntStream stream = Arrays.stream(arr);
+4. What are Intermediate Operations?
+Answer
+
+Intermediate operations return another stream.
+
+Examples:
+
+filter()
+map()
+sorted()
+distinct()
+5. What are Terminal Operations?
+Answer
+
+Terminal operations produce final result.
+
+Examples:
+
+collect()
+count()
+forEach()
+reduce()
+6. Difference Between map() and filter()
+map()	filter()
+Transforms data	Filters data
+Changes value	Returns boolean
+map() Example
+List<Integer> list = Arrays.asList(1,2,3);
+
+list.stream()
+    .map(x -> x * 2)
+    .forEach(System.out::println);
+
+Output:
+
+2
+4
+6
+filter() Example
+List<Integer> list = Arrays.asList(1,2,3,4,5);
+
+list.stream()
+    .filter(x -> x % 2 == 0)
+    .forEach(System.out::println);
+
+Output:
+
+2
+4
