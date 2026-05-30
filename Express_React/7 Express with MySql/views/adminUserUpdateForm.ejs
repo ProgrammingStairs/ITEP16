@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            height:30px;
+            width: 300px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./adminHeader') %>
+    <center>
+        <form action="/admin/updateUser" method="post">
+            <table>
+                <caption>
+                    <h3>Update Form</h3>
+                </caption>
+                <tbody>
+                    <tr>
+                        <td>
+                            Username <br>
+                            <input value="<%=userData.username%>" type="text" placeholder="Enter Username" name="username">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Email <br>
+                            <input readonly value="<%=userData.email%>" type="email" placeholder="Enter Email" name="email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Password <br>
+                            <input value="<%=userData.password%>" type="text" placeholder="Enter Password" name="password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Address <br>
+                            <textarea rows="3" cols="40" placeholder="Enter Address" name="address"><%=userData.address%></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Update"><br>
+                            <input type="reset" value="Reset">
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </form>
+       
+    </center>
+</body>
+</html>
