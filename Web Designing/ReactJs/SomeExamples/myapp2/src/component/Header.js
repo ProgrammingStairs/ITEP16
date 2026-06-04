@@ -5,7 +5,7 @@ function Header(){
     return (<>
             <center>
                 <h2>Example of Redux Toolkit</h2>
-                <h3>Tagline | Count : {userObj.count}</h3>
+                <h3>{userObj.tagLine} | Count : {userObj.count}</h3>
                 <hr/>
             </center>
     </>);

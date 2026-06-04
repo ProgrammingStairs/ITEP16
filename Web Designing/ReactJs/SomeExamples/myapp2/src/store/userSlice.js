@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    count : 100,
+    count : 0,
     tagLine : "Default TagLine"
 }
 const UserSlice = createSlice({
@@ -28,13 +28,16 @@ export default UserSlice.reducer;
 /*
 export const {increment,decrement,reset} = {
     increment : ()=>{
-        return {type:'userSlice/increment',......}    
+        return {type:'userSlice/increment'}    
     },
     decrement : ()=>{
-        return {type:'userSlice/decrement',......}    
+        return {type:'userSlice/decrement'}    
     },
     reset : ()=>{
-        return {type:'userSlice/reset',......}    
+        return {type:'userSlice/reset'}    
+    },
+    setTagLine : (tag)=>{
+        return {type:'userSlice/setTagLine',payload:tag}    
     }
 };
 
